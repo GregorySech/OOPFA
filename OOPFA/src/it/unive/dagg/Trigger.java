@@ -8,10 +8,8 @@ package it.unive.dagg;
 /**
  *
  * @author Gregory Sech
+ * Azione che può far "scattare" modifiche nel normale proseguimento del turno
  */
-public class Game {
+public class Trigger {
     
-    public static void main(String[] args){
-        System.out.println("Hello!");
-    }
 }
