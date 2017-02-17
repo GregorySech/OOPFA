@@ -5,13 +5,25 @@
  */
 package it.unive.dagg;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Gregory Sech
+ * Contiene la logica e il ciclo di vita del gioco.
+ * Ha un metodo main().
  */
 public class Game {
     
     public static void main(String[] args){
-        System.out.println("Hello!");
+        System.out.println("Hello");
+        ArrayList<String> lista = new ArrayList<String>();
+        lista.add("pippo");
+        lista.add("pluto");
+        lista.add("paperino");
+        
+        while(lista.size() > 1){
+            System.out.println(""+lista.remove(1));
+        }
     }
 }
