@@ -8,17 +8,21 @@ package it.unive.dagg.phases;
 import it.unive.dagg.Player;
 
 /**
- *
+ * Rappresents a 
  * @author Gregory Sech
  */
-abstract class Phase {
+public abstract class Phase {
     
     private final Player chief;
 
-    Phase(Player chief) {
+    public Phase(Player chief) {
         this.chief = chief;
     }
 
+    public Player getChief(){
+        return chief;
+    }
+    
     void phaseStart(){
         
     }

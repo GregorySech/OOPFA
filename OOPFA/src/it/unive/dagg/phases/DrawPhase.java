@@ -3,11 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package it.unive.dagg;
+package it.unive.dagg.phases;
+
+import it.unive.dagg.Player;
 
 /**
  *
  * @author Gregory Sech
  */
-public class Player {
+public class DrawPhase extends Phase {
+    
+    public DrawPhase(Player chief) {
+        super(chief);
+    }
+    
 }
