@@ -5,16 +5,18 @@
  */
 package it.unive.dagg.phases;
 
+import it.unive.dagg.Game;
 import it.unive.dagg.Player;
 
 /**
- * Rappresents a 
+ * Concept of Phase: a Player's activity with a starting and ending points.
  * @author Gregory Sech
  */
-public abstract class Phase {
+public abstract class Phase implements it.unive.interfaces.Phase{
     
     private final Player chief;
 
+    
     public Phase(Player chief) {
         this.chief = chief;
     }
@@ -24,18 +26,25 @@ public abstract class Phase {
     }
     
     void phaseStart(){
-        
+        Game.getInstance().phaseStarted(this);
     }
     
     void phaseEnd(){
         
     }
     
+    /**
+     * @Override this for a specific activity
+     */
     void activity(){
         
     }
     
-    void phaseRun(){
+    /**
+     * Makes the activity start.
+     */
+    @Override
+    public final void phaseRun(){
        phaseStart();
        activity();
        phaseEnd();

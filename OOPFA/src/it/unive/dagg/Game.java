@@ -6,6 +6,7 @@
 package it.unive.dagg;
 
 import it.unive.dagg.phases.PhaseManager;
+import it.unive.interfaces.Phase;
 
 
 /**
@@ -13,7 +14,7 @@ import it.unive.dagg.phases.PhaseManager;
  * Contiene la logica e il ciclo di vita del gioco.
  * Ha un metodo main().
  */
-public class Game {
+public class Game implements it.unive.interfaces.Game {
     
     private static Game me = null;
     
@@ -60,5 +61,10 @@ public class Game {
     
     public static void main(String[] args){
        
+    }
+
+    @Override
+    public void phaseStarted(Phase p) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
