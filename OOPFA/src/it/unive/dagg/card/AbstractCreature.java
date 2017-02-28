@@ -65,10 +65,10 @@ public abstract class AbstractCreature implements Creature {
         int damage = giocatore.damageCreature(dmg);
 
         damageLeft = cavia.getDefRemain() - damage;
-        System.out.print("\n Inflict "+damage+" damage to Creature: "+this.nome());
+        System.out.print("\n Danno inflitto "+damage+" alla creatura: "+this.nome());
 
         if (damageLeft <= 0) {
-            System.out.print("\n\n\n" + this.nome() + " life = 0 .... destroy \n");
+            System.out.print("\n\n\n" + this.nome() + " vita = 0 .... distrutto \n");
             //la creatura va distrutta
         }
     }
