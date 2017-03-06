@@ -11,7 +11,7 @@ import it.unive.dagg.Player;
  *
  * @author Gregory Sech
  */
-public class UntapPhase extends Phase{
+public class UntapPhase extends AbstractPhase{
     
     public UntapPhase(Player chief) {
         super(chief);

@@ -3,18 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package it.unive.dagg.phases;
-
-import it.unive.dagg.Player;
-
+package it.unive.interfaces;
+import it.unive.interfaces.Phase;
 /**
  *
  * @author Gregory Sech
  */
-public class EndPhase extends AbstractPhase{
-    
-    public EndPhase(Player chief) {
-        super(chief);
-    }
-    
+public interface PhaseListener {
+    public void onPhaseStarted(Phase p);
+    public void onPhaseEnded(Phase p);
 }

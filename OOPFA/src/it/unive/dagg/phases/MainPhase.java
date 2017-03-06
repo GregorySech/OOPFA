@@ -11,10 +11,10 @@ import it.unive.dagg.Player;
  *
  * @author Gregory Sech
  */
-public class MainPhase extends Phase{
+public class MainPhase extends AbstractPhase{
     
     public MainPhase(Player chief) {
         super(chief);
     }
-    
+   
 }

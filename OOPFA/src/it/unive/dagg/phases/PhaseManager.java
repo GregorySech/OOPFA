@@ -6,15 +6,16 @@
 package it.unive.dagg.phases;
 
 import it.unive.dagg.Game;
-import it.unive.dagg.Player;
-
+import it.unive.interfaces.Player;
+import it.unive.interfaces.Phase;
+import it.unive.interfaces.PhaseListener;
 /**
  * Gestore alternanza turni e modifiche alla struttura dei turni.
  * @author Gregory Sech
  */
 public class PhaseManager {
     private PhaseListener pl;
-    private Phase next;
+    private AbstractPhase next;
     
     public PhaseManager(Player starter){
         pl = new PhaseListener() {

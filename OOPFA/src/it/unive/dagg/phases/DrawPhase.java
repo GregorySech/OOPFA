@@ -5,13 +5,13 @@
  */
 package it.unive.dagg.phases;
 
-import it.unive.dagg.Player;
+import it.unive.interfaces.Player;
 
 /**
  *
  * @author Gregory Sech
  */
-public class DrawPhase extends Phase {
+public class DrawPhase extends AbstractPhase {
     
     public DrawPhase(Player chief) {
         super(chief);

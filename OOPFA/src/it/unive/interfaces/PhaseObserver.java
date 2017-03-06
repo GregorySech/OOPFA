@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package it.unive.dagg.phases;
+package it.unive.interfaces;
 
 /**
  *
  * @author Gregory Sech
  */
-public interface PhaseListener {
-    public void onPhaseStarted(Phase p);
-    public void onPhaseEnded(Phase p);
+public interface PhaseObserver {
+    public void addPhaseListener(PhaseListener pl);
+    public void removePhaseListener(PhaseListener pl);
 }

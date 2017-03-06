@@ -9,5 +9,5 @@ package it.unive.dagg;
  *
  * @author Gregory Sech
  */
-public class Player {
+public class Player implements it.unive.interfaces.Player{
 }

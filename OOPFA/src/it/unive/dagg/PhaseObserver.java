@@ -5,7 +5,7 @@
  */
 package it.unive.dagg;
 
-import it.unive.dagg.phases.PhaseListener;
+import it.unive.interfaces.PhaseListener;
 import java.util.ArrayList;
 
 /**

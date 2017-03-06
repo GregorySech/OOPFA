@@ -11,7 +11,7 @@ import it.unive.dagg.Player;
  *
  * @author Gregory Sech
  */
-public class CombatPhase extends Phase {
+public class CombatPhase extends AbstractPhase {
     
     public CombatPhase(Player chief) {
         super(chief);
