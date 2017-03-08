@@ -32,20 +32,20 @@ public abstract class AbstractPhase implements it.unive.interfaces.Phase{
                 System.out.println("[AbstractPhase] Phase finita");
             }
         };
-        Game.getInstance().addPhaseListener(pl);
+        Game.getInstance().getPhaseObserver().addPhaseListener(pl);
     }
     
     public AbstractPhase(Player chief, PhaseListener pl){
         this.chief = chief;
         this.pl = pl;
-        Game.getInstance().addPhaseListener(pl);
+        Game.getInstance().getPhaseObserver().addPhaseListener(pl);
     }
 
     @Override
     public void setPhaseListener(PhaseListener pl){
-        Game.getInstance().removePhaseListener(this.pl);
+        Game.getInstance().getPhaseObserver().removePhaseListener(this.pl);
         this.pl = pl;
-        Game.getInstance().addPhaseListener(this.pl);
+        Game.getInstance().getPhaseObserver().addPhaseListener(this.pl);
     }
     
     @Override
@@ -54,11 +54,11 @@ public abstract class AbstractPhase implements it.unive.interfaces.Phase{
     }
     
     void phaseStart(){
-        Game.getInstance().phaseStarted(this);
+        Game.getInstance().getPhaseObserver().phaseStarted(this);
     }
     
     void phaseEnd(){
-        Game.getInstance().phaseEnded(this);
+        Game.getInstance().getPhaseObserver().phaseEnded(this);
     }
     
     /**

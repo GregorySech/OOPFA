@@ -10,6 +10,6 @@ package it.unive.interfaces;
  * @author Gregory Sech
  */
 public interface Game {
+    public PhaseObserver getPhaseObserver();
     
-    public void phaseStarted(Phase p);
 }

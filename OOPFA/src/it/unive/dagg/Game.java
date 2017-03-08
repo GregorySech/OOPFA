@@ -5,8 +5,8 @@
  */
 package it.unive.dagg;
 
-import it.unive.dagg.phases.AbstractPhase;
 import it.unive.dagg.phases.PhaseManager;
+import it.unive.interfaces.PhaseObserver;
 import it.unive.interfaces.Phase;
 import it.unive.interfaces.PhaseListener;
 import it.unive.interfaces.Player;
@@ -27,7 +27,7 @@ public class Game implements it.unive.interfaces.Game {
     private PhaseObserver po;
     
     private Game(){
-        this.po = new PhaseObserver();
+        this.po = new it.unive.dagg.PhaseObserver();
         this.running = false;
     }
     
@@ -62,25 +62,14 @@ public class Game implements it.unive.interfaces.Game {
             return null;
     }
     
+    public void start() {
+        if(!running){
+            
+        }
+    }
 
     @Override
-    public void phaseStarted(Phase p) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void addPhaseListener(PhaseListener pl) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void removePhaseListener(PhaseListener pl) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void phaseEnded(AbstractPhase aThis) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void start() {
+    public PhaseObserver getPhaseObserver() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

@@ -12,4 +12,6 @@ package it.unive.interfaces;
 public interface PhaseObserver {
     public void addPhaseListener(PhaseListener pl);
     public void removePhaseListener(PhaseListener pl);
+    public void phaseStarted(Phase p);
+    public void phaseEnded(Phase p);
 }

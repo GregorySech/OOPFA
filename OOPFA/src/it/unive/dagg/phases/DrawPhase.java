@@ -16,5 +16,12 @@ public class DrawPhase extends AbstractPhase {
     public DrawPhase(Player chief) {
         super(chief);
     }
+
+    @Override
+    void activity() {
+        getChief().draw();
+    }
+    
+    
     
 }

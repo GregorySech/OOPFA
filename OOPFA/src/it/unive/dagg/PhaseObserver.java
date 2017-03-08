@@ -5,6 +5,7 @@
  */
 package it.unive.dagg;
 
+import it.unive.interfaces.Phase;
 import it.unive.interfaces.PhaseListener;
 import java.util.ArrayList;
 
@@ -12,7 +13,7 @@ import java.util.ArrayList;
  * 
  * @author Gregory Sech
  */
-class PhaseObserver {
+class PhaseObserver implements it.unive.interfaces.PhaseObserver {
     private final ArrayList<PhaseListener> lpl;
     
     PhaseObserver(){
@@ -20,9 +21,27 @@ class PhaseObserver {
         
     }
 
-    void addPhaseListener(PhaseListener phaseListener) {
-        lpl.add(phaseListener);
+    @Override
+    public void addPhaseListener(PhaseListener pl) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public void removePhaseListener(PhaseListener pl) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void phaseStarted(Phase p) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void phaseEnded(Phase p) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
 
     
     
