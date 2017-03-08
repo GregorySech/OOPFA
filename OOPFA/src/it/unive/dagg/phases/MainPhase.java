@@ -5,7 +5,7 @@
  */
 package it.unive.dagg.phases;
 
-import it.unive.dagg.Player;
+import it.unive.interfaces.Player;
 
 /**
  *
