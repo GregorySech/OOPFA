@@ -3,11 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package it.unive.dagg;
+package it.unive.dagg.player;
 
 /**
  *
- * @author Gregory Sech
+ * @author diletta
  */
-public class Player implements it.unive.interfaces.Player{
+public class Field {
+    
 }
