@@ -12,7 +12,7 @@ package it.unive.dagg.card;
 public interface Effect {
     
     // ritorna vero se scarto una carta dalla mano e l'aggiungo nello stack
-    boolean gioca();
+    boolean play();
     // lancio l'effetto
-    void lancia();
+    void run();
 }
