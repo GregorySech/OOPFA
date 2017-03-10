@@ -49,14 +49,22 @@ public class Player implements it.unive.interfaces.Player{
        }
     }
 
-    @Override
+    @Override/**
+     * resizeHand viene chiamato solo nella drawphase e fa scartare carte al giocatore
+     * fino a che questo non ha 7 carte in mano, l'intero è passato a Discard è uno 
+     * perchè non si sa quante carte bisognerà scartare prima di arrivare a 7
+     */
     public void resizeHand() {
         while(hand.size()>7){
             discard(1);
         }
     }
 
-    @Override
+    @Override/**
+     * Metodo per scartare una o più carte, prende in input un intero perchè se ci sono
+     * effetti che mi dicono di scartare carte, mi passeranno l'esatto numero di carte 
+     * scartare
+     */
     public void discard(int num) {
         if(hand.isEmpty()==false){
             for(; num==0; num--){
@@ -64,7 +72,9 @@ public class Player implements it.unive.interfaces.Player{
             }
         }
     }
-        
+    /**
+     * Il metodo choiceCard fa scegliere all'utente che carta scartare
+     */
     public Card choiceCard(){
         Card temp = null;
         int index;

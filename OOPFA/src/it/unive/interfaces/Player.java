@@ -23,5 +23,5 @@ public interface Player {
      * Fa scartare una carta al giocatore
      */
     
-    void discard();
+    void discard(int num);
 }
