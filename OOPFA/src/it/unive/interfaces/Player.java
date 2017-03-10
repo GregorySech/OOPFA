@@ -10,8 +10,13 @@ package it.unive.interfaces;
  * @author Gregory Sech
  */
 public interface Player {
-    /*
+    /**
+     * 
         Fa pescare una carta al giocatore dal proprio mazzo.
     */
     void draw();
+    /**
+     * Se alla fine della draw phase il giocatore ha più di 7 carte deve scartare
+     */
+    void resizeHand(); 
 }
