@@ -19,4 +19,9 @@ public interface Player {
      * Se alla fine della draw phase il giocatore ha più di 7 carte deve scartare
      */
     void resizeHand(); 
+    /**
+     * Fa scartare una carta al giocatore
+     */
+    
+    void discard();
 }

@@ -10,5 +10,5 @@ package it.unive.interfaces;
  * @author Gregory Sech
  */
 public interface Card {
-    
+    String getName();
 }
