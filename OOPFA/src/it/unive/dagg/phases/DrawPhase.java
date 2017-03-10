@@ -20,6 +20,7 @@ public class DrawPhase extends AbstractPhase {
     @Override
     void activity() {
         getChief().draw();
+        getChief().resizeHand();
     }
     
     

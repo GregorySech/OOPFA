@@ -5,7 +5,6 @@
  */
 package it.unive.dagg.player;
 import java.util.ArrayList;
-import java.util.Collections;
 import it.unive.interfaces.Card;
 
 /**

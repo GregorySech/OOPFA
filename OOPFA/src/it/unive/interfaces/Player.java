@@ -24,4 +24,10 @@ public interface Player {
      */
     
     void discard(int num);
+    
+    /**
+     * 
+     * @return Nome del giocatore 
+     */
+    String getName();
 }

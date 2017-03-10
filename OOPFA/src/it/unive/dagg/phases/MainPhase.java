@@ -16,5 +16,14 @@ public class MainPhase extends AbstractPhase{
     public MainPhase(Player chief) {
         super(chief);
     }
+
+    @Override
+    void activity() {
+        super.activity(); 
+        
+        System.out.println("Main Phase di "+getChief().getName());    
+    }
+    
+    
    
 }
