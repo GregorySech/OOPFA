@@ -10,5 +10,9 @@ package it.unive.interfaces;
  * @author Gregory Sech
  */
 public interface Effect {
+        // ritorna vero se scarto una carta dalla mano e l'aggiungo nello stack
+    boolean gioca();
+    // lancio l'effetto
+    void lancia();
     
 }
