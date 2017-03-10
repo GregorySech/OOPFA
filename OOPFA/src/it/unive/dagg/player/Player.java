@@ -20,8 +20,10 @@ public class Player implements it.unive.interfaces.Player{
     Hand hand;
     Field field;
     String name;
+    int life;
     
     public Player(Collection<Card> deck){
+        this.life = 20;
         this.deck = new Deck(deck);
         this.hand = new Hand();
         for(int i=0; i<5;i++){
@@ -30,7 +32,37 @@ public class Player implements it.unive.interfaces.Player{
         
     }
     
-    public void getName(){
+     public Player(Collection<Card> deck, int life){
+        this.life = life;
+        this.deck = new Deck(deck);
+        this.hand = new Hand();
+        for(int i=0; i<5;i++){
+            this.draw();
+        }
+        
+    }
+     
+    public void addLife(int num){
+        if(num<0){
+           throw new UnsupportedOperationException("You cannot add a negative number to life");
+        }else{
+            this.life+=num;
+        }
+    }
+    
+    public void sotractLife(int num){
+        if(num<0){
+            throw new UnsupportedOperationException();
+        }else{
+            this.life-=num;
+        }
+    }
+    
+    public int getLife(){
+        return this.life;
+    }
+    
+    public void setName(){
        Scanner scan = new Scanner(System.in);
         System.out.println("Please, insert your player name");
         name = scan.next();
@@ -76,19 +108,32 @@ public class Player implements it.unive.interfaces.Player{
      * Il metodo choiceCard fa scegliere all'utente che carta scartare
      */
     public Card choiceCard(){
-        Card temp = null;
         int index;
         Scanner scan = new Scanner(System.in);
         System.out.println("You have to choose a card to discard. These are your cards:");
+        printHand();
+        System.out.println("Which one you want to discard?");
+        index = scan.nextInt();
+        return hand.get(index);
+    }
+    
+    Collection<Card> getHand(){
+        return this.hand;
+    }
+    
+    public void printHand(){
+        Card temp = null;
         for(Iterator<Card> i = hand.iterator(); i.hasNext();){
             temp = i.next();
             if(temp!=null){
                 System.out.println(hand.indexOf(temp)+1+temp.getName());
             }
         }
-        System.out.println("Which one you want to discard?");
-        index = scan.nextInt();
-        return hand.get(index);
+    }
+    
+    @Override
+    public String getName() {
+        return this.name;
     }
     
     

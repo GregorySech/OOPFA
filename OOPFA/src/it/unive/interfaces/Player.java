@@ -5,6 +5,8 @@
  */
 package it.unive.interfaces;
 
+import java.util.Collection;
+
 /**
  * Servizi che Player DEVE poter offrire
  * @author Gregory Sech
@@ -25,9 +27,13 @@ public interface Player {
     
     void discard(int num);
     
-    /**
-     * 
-     * @return Nome del giocatore 
-     */
     String getName();
+    
+    Collection<Card> getHand();
+    
+    void printHand();
+    
+    void addLife(int num);
+    
+    void sotractLife(int num);
 }
