@@ -24,7 +24,6 @@ public interface Player {
     /**
      * Fa scartare una carta al giocatore
      */
-    
     void discard(int num);
     
     String getName();
@@ -36,4 +35,6 @@ public interface Player {
     void addLife(int num);
     
     void sotractLife(int num);
+    
+    void play(int cardHandIndex);
 }

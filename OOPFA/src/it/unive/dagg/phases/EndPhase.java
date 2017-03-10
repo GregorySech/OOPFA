@@ -16,5 +16,13 @@ public class EndPhase extends AbstractPhase{
     public EndPhase(Player chief) {
         super(chief);
     }
+
+    @Override
+    void activity() {
+        super.activity(); 
+        System.out.println("EndPhase di "+getChief().getName());        
+    }
+    
+    
     
 }

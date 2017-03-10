@@ -6,7 +6,9 @@
 package it.unive.dagg.phases;
 
 import it.unive.interfaces.Player;
-
+import it.unive.interfaces.Card;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 /**
  *
  * @author Gregory Sech
@@ -19,9 +21,25 @@ public class MainPhase extends AbstractPhase{
 
     @Override
     void activity() {
-        super.activity(); 
+        super.activity();
+        Scanner sc = new Scanner(System.in);
+        int choice = 0;
         
-        System.out.println("Main Phase di "+getChief().getName());    
+        System.out.println("Main Phase di "+getChief().getName());
+        while(choice < 1 || choice > getChief().getHand().size()){
+            getChief().printHand();
+            try{
+            choice = sc.nextInt();
+            }catch(InputMismatchException ime){
+                choice = 0;
+                System.out.println("Card's index not found");
+            }catch(Exception e){
+                choice = 0;
+                System.out.println("Something went wrong, retry");
+            }
+        }
+        
+        
     }
     
     
