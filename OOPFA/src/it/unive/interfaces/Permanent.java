@@ -10,5 +10,6 @@ package it.unive.interfaces;
  * @author Gregory Sech
  */
 public interface Permanent {
+    private String name;
     
 }
