@@ -12,9 +12,7 @@ package it.unive.dagg.card;
 public interface Card {
 
     // ritorna l'effetto che deve essere inserito nello stack
-    Effect getEffetto(Player proprietario);
-    String nome();
-    String tipo(); //incantesimo, istantanea o creatura
+    Effect getEffect(Player proprietario);
+    String getName();
     String getDescrizione();
-    boolean isInstantaneo();
 }

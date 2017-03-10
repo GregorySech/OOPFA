@@ -13,13 +13,14 @@ package it.unive.dagg.card;
 
 public abstract class AbstractCreature implements Creature {
 
-    protected Player giocatore;
+    protected Player player;
     protected boolean isTapped = false;
     protected int damageLeft = getDefence();
-    private Creature cavia;//sarà la creatura fisica in campo
+    //private Creature cavia;//sarà la creatura fisica in campo
+    //utile per permanents
 
-    protected AbstractCreature(Player giocatore) {
-        this.giocatore = giocatore;
+    protected AbstractCreature(Player player) {
+        this.player = player;
     }
 
     @Override
@@ -51,18 +52,18 @@ public abstract class AbstractCreature implements Creature {
     }
 
     @Override
-    public void attacca() {
+    public void attack() {
         //da implementare
     } 
 
     @Override
-    public void difendi(Creature c) {
+    public void defend(Creature c) {
         //da implementare
     }
 
     @Override
-    public void infliggiDanno(int dmg) {
-        int damage = giocatore.damageCreature(dmg);
+    public void getInflictDamage(int dmg) {
+        int damage = player.damageCreature(dmg);
 
         damageLeft = cavia.getDefRemain() - damage;
         System.out.print("\n Danno inflitto "+damage+" alla creatura: "+this.nome());
@@ -79,7 +80,7 @@ public abstract class AbstractCreature implements Creature {
     }
 
     @Override
-    public void resetDanno() {
+    public void resetDafence() {
         damageLeft = getDefence();
     }
 

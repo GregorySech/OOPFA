@@ -17,14 +17,14 @@ public interface Creature{
     boolean tap();
     boolean untap();
     boolean isTapped();
-    void attacca(); // da implementare
-    void difendi(Creature c); // da implementare
-    void infliggiDanno(int dmg);
-    void resetDanno();
+    void attack(); // da implementare
+    void defend(Creature c); // da implementare
+    void getInflictDamage(int dmg);
+    void resetDamage();
     int getAttack();
     int getDefence();
     int getDefRemain();
-    boolean isDefender();
+    boolean isDefender(); //vedi se ti serve nei permanent
     
     // ritorna gli effetti associati alle creature
     List<Effect> effects();

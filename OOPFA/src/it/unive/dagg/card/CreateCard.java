@@ -9,6 +9,6 @@ package it.unive.dagg.card;
  *
  * @author alessandro
  */
-public interface CreaCarta{
+public interface CreateCard{
     public Card create();
 }

@@ -13,12 +13,12 @@ package it.unive.dagg.card;
 //rimuove una carta dalla mano e la mette nello stack
 public abstract class AbstractCardEffect extends AbstractEffect {
     
-    protected Player giocatore;
-    protected Card carta;
+    protected Player player;
+    protected Card card;
 
-    protected AbstractCardEffect(Player giocatore, Card carta) {
-        this.giocatore = giocatore;
-        this.carta = carta;
+    protected AbstractCardEffect(Player player, Card carta) {
+        this.player = player;
+        this.card = card;
     }
     
     @Override
@@ -29,6 +29,6 @@ public abstract class AbstractCardEffect extends AbstractEffect {
     
     @Override
     public String toString() {
-        return carta.toString();
+        return card.toString();
     }
 }
