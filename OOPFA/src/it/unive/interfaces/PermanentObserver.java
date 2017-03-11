@@ -8,10 +8,8 @@ package it.unive.interfaces;
 /**
  *
  */
-public interface Game {
-    public PhaseObserver getPhaseObserver();
-    public PermanentObserver getPermanentObserver();
-    public StackObserver getStackObserver();
-    public Player getRival(Player p);
-    
+public interface PermanentObserver {
+    void created(Permanent p);
+    void summoned(Permanent p);
+    void destroyed(Permanent p);
 }

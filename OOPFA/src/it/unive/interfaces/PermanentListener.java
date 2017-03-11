@@ -5,9 +5,9 @@
  */
 package it.unive.interfaces;
 
-/**
- * Metodi che Permanent DEVE offrire
- * 
- */
-public interface Permanent {
+
+public interface PermanentListener {
+    void onPermanentCreated(Permanent p);
+    void onPermanentDestroyed(Permanent p);
+    void onPermanentSummoned(Permanent p);
 }

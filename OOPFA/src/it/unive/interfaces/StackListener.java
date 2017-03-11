@@ -8,10 +8,7 @@ package it.unive.interfaces;
 /**
  *
  */
-public interface Game {
-    public PhaseObserver getPhaseObserver();
-    public PermanentObserver getPermanentObserver();
-    public StackObserver getStackObserver();
-    public Player getRival(Player p);
+public interface StackListener {
+    void onEffectCasted(Effect e);
     
 }
