@@ -9,11 +9,13 @@ import it.unive.dagg.card.Effect;
 import it.unive.interfaces.Card;
 import it.unive.interfaces.PhaseManager;
 import it.unive.interfaces.PermanentObserver;
+import it.unive.interfaces.Phase;
 import it.unive.interfaces.PhaseObserver;
 import it.unive.interfaces.Player;
 import it.unive.interfaces.StackObserver;
+import it.unive.interfaces.VictoryListener;
+import it.unive.interfaces.VictoryObserver;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Scanner;
 
 
@@ -31,12 +33,13 @@ public class Game implements it.unive.interfaces.Game {
     private final PhaseObserver po;
     private final StackObserver so;
     private final PermanentObserver permo;
+    private final VictoryObserver vo;
     
     private Game(){
         this.po = new it.unive.dagg.observers.PhaseObserver();
         this.permo = new it.unive.dagg.observers.PermanentObserver();
         this.so = new it.unive.dagg.observers.StackObserver();
-        
+        this.vo = new it.unive.dagg.observers.VictoryObserver();
         this.p1 = null;
         this.p2 = null;
         this.running = false;
@@ -50,6 +53,7 @@ public class Game implements it.unive.interfaces.Game {
     
     private void run(Player a, Player b){
         if(!running){
+            Phase p;
             if(((int) (Math.random()*10)) % 2 == 0){
                 p1 = a;
                 p2 = b;
@@ -58,7 +62,18 @@ public class Game implements it.unive.interfaces.Game {
                 p1 = b;
             }
             this.pm = new it.unive.dagg.phases.PhaseManager(p1);
+            vo.addVictoryListener(new VictoryListener() {
+                @Override
+                public void onVictory(Player p) {
+                    System.out.println("Gratz on the victory "+p.getName());
+                    running = false;
+                }
+            });
             running = true;
+            while(running){
+                p = pm.getNextPhase();
+                p.phaseRun();
+            }
         }
     }
     
@@ -189,5 +204,10 @@ public class Game implements it.unive.interfaces.Game {
             return p1;
         else
             return null;
+    }
+
+    @Override
+    public VictoryObserver getVictoryObserver() {
+        return vo;
     }
 }

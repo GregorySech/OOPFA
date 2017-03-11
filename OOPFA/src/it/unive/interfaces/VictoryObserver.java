@@ -9,6 +9,8 @@ package it.unive.interfaces;
  *
  * @author gregory
  */
-public interface PhaseManager {
-    Phase getNextPhase();
+public interface VictoryObserver {
+    void addVictoryListener(VictoryListener vl);
+    void removeVictoryListener(VictoryListener vl);
+    void won(Player winner);
 }
