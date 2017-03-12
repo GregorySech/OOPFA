@@ -35,6 +35,9 @@ public class PhaseManager implements it.unive.interfaces.PhaseManager{
                 }
             }
         });
+        stashPhases(generateTurn(starter));
+        getNextPhase();
+        getNextPhase();
     }
 
     @Override

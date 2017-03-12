@@ -34,6 +34,7 @@ public class Game implements it.unive.interfaces.Game {
     private final StackObserver so;
     private final PermanentObserver permo;
     private final VictoryObserver vo;
+    private VictoryListener vl;
     
     private Game(){
         this.po = new it.unive.dagg.observers.PhaseObserver();
@@ -62,13 +63,14 @@ public class Game implements it.unive.interfaces.Game {
                 p1 = b;
             }
             this.pm = new it.unive.dagg.phases.PhaseManager(p1);
-            vo.addVictoryListener(new VictoryListener() {
+            vl = new VictoryListener() {
                 @Override
                 public void onVictory(Player p) {
                     System.out.println("Gratz on the victory "+p.getName());
                     running = false;
                 }
-            });
+            };
+            vo.addVictoryListener(vl);
             running = true;
             while(running){
                 p = pm.getNextPhase();
