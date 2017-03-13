@@ -89,6 +89,11 @@ public abstract class CreaturePermanent extends Permanent{
         this.attack += attack;
     }
     
+    public void subAttack(int ap){
+        attack -= ap;
+        if(attack < 0)
+            attack = 0;
+    }
     public String toString(){
        return super.toString()+" HP: "+hp+" ATTACK: "+attack+" TAPPED: "+tapped;
     }
