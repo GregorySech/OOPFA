@@ -12,7 +12,9 @@ package it.unive.dagg.player;
  */
 import java.util.Collection;
 import it.unive.interfaces.Card;
+import it.unive.interfaces.Flash;
 import it.unive.interfaces.Permanent;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
@@ -26,6 +28,7 @@ public class Player implements it.unive.interfaces.Player{
     public Player(Collection<Card> deck, String name){
         this.life = 20;
         this.name = name;
+        this.field = new Field();
         this.deck = new Deck(deck);
         this.hand = new Hand();
         for(int i=0; i<5;i++){
@@ -149,5 +152,24 @@ public class Player implements it.unive.interfaces.Player{
     public void addInField(Permanent p){
         field.add(p);
     }
-     
+    
+    public Iterator<Flash> handFlashIterator(){
+        ArrayList<Flash> handFlash = new ArrayList();
+        for(Card c: this.hand){
+            if(c instanceof Flash){
+                handFlash.add((Flash)c);
+            }
+        }
+        return handFlash.iterator();
+    }
+    
+    public Iterator<Flash> fieldFlashIterator(){
+        ArrayList <Flash> fieldFlash = new ArrayList();
+        for(Permanent p: this.field){
+            if(p instanceof Flash){
+                fieldFlash.add((Flash)p);
+            }
+        }
+        return fieldFlash.iterator();
+    }
 }
