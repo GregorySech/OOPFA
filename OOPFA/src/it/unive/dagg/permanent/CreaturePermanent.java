@@ -14,7 +14,7 @@ import it.unive.interfaces.Player;
  * @author giacomo
  */
 public abstract class CreaturePermanent extends Permanent{
-    private int initialHp;
+    private final int initialHp;
     private int hp;
     private int attack;
     private boolean tapped = false; 
@@ -94,6 +94,7 @@ public abstract class CreaturePermanent extends Permanent{
         if(attack < 0)
             attack = 0;
     }
+    @Override
     public String toString(){
        return super.toString()+" HP: "+hp+" ATTACK: "+attack+" TAPPED: "+tapped;
     }

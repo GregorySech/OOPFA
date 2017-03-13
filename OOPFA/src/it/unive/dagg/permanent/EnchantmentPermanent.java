@@ -17,13 +17,13 @@ public abstract class EnchantmentPermanent extends Permanent{
         super(name, p);
     }
     /**
-     * 
-     * @param p 
+     * afflict è l'effetto che usa il permanente -> da implementare quando si chiama con classe anonima!
+     * @param player 
      */
-    public abstract void afflict(Player player);
+    public void afflict(Player player){}
     /**
-     * 
+     * afflict è l'effetto che usa il permanente -> da implementare quando si chiama con classe anonima!
      * @param permanent 
      */
-    public abstract void afflict(Permanent permanent);
+    public void afflict(Permanent permanent){}
 }
