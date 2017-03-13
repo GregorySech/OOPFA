@@ -9,6 +9,6 @@ package it.unive.interfaces;
  *
  * @author alessandro
  */
-public interface EffectStack {
+public interface EffectStack extends Iterable<Effect> {
     
 }

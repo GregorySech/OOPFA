@@ -7,7 +7,7 @@ import java.util.ArrayDeque;
 import java.util.Iterator;
 
 
-public class CardStack implements Iterable<Effect>, EffectStack {
+public class CardStack implements EffectStack {
 
     private final ArrayDeque<Effect> stack = new ArrayDeque<>();
     

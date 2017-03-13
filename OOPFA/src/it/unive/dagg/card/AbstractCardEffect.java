@@ -38,4 +38,13 @@ public abstract class AbstractCardEffect implements Effect {
     public void setCaster(Player p){
         this.player=p;
     }
+
+    @Override
+    public Player getCaster() {
+       return player;
+    }
+
+    
+    
+    
 }
