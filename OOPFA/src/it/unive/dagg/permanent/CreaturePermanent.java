@@ -13,56 +13,71 @@ import it.unive.interfaces.Player;
  *
  * @author giacomo
  */
-public class CreaturePermanent extends Permanent{
-    /*una creatura ha: hp, valore di attacco,  */
+public abstract class CreaturePermanent extends Permanent{
     private int initialHp;
     private int hp;
     private int attack;
-   
     private boolean tapped = false; 
-    /*ABILITÀ: Cosa Sono? */
-    public CreaturePermanent(Card/*Creature*/ c, Player p){
-        /*devo vedere come è fatto Effect.*/
-        super(c, p);
-        initialHp = 0/*c.getLife()*/;
+    private boolean defender = false;
+    
+    public CreaturePermanent(String name, int lifePoints, int attack, Player p){
+        super(name, p);
+        initialHp = lifePoints;
         hp = initialHp;
-        attack = 0 /*c.attack()*/;       
+        this.attack = attack;     
     }
     public int getHp(){
         return hp;
     }
+
     public int getAttack(){
         return attack;
     }
-    public Player getChief(){
-        return chief;
-    }
+
     public boolean isTapped(){
         return tapped;
     }
+
+    public boolean isDefender(){
+        return defender;
+    }
+
+    public void setDefender(boolean def) {
+        defender = def;
+    }
+
     public void tap(){
         tapped = true;
     }
+
     public void untap(){
         tapped = false;
     }
-    public void defenseFrom(CreaturePermanent attacker){
+
+    public void defenseFrom(CreaturePermanent attacker) throws Exception{
+        if(!defender)
+             throw new Exception("["+name+"] I can't defend you!");
         hp -= attacker.getAttack();
         attack(attacker);
     }
-    public void attack(Player enemy){ /*una creatura può attaccare solo il giocatore avversario.*/
-        hp -= 0 /*enemy.getAttacked(this)*/;
+
+    public void attack(Player enemy) throws Exception{ /*una creatura può attaccare solo il giocatore avversario.*/
+        if(!tapped)
+            throw new Exception("["+name+"] I can't attack!");
+        enemy.subtractLife(hp);
     }
-    private void attack(CreaturePermanent enemyCreature){
+    private void attack(CreaturePermanent enemyCreature) {
         
+        /*PRIVATE perchè lo chiamo internamente con il metodo defenseFrom*/
+        hp -= enemyCreature.getAttack();
+        if(hp <= 0)
+           destroy();
     }
     public void restoreHp(){
         hp = initialHp;
     }
     
     public String toString(){
-       return "["+name+"] HP: "+hp+" ATTACK: "+attack+" TAPPED: "+tapped+" ("+/*chief.getName()+*/")";
+       return super.toString()+" HP: "+hp+" ATTACK: "+attack+" TAPPED: "+tapped;
     }
-    
-    
 }
