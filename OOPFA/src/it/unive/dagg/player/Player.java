@@ -164,6 +164,7 @@ public class Player implements it.unive.interfaces.Player{
         Game.getInstance().getPermanentObserver().removed(field.remove(index));
     }
     
+    @Override
     public Iterator<Flash> handFlashIterator(){
         ArrayList<Flash> handFlash = new ArrayList();
         for(Card c: this.hand){
@@ -174,6 +175,7 @@ public class Player implements it.unive.interfaces.Player{
         return handFlash.iterator();
     }
     
+    @Override
     public Iterator<Flash> fieldFlashIterator(){
         ArrayList <Flash> fieldFlash = new ArrayList();
         for(Permanent p: this.field){
