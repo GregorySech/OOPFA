@@ -2,11 +2,12 @@ package it.unive.dagg.card;
 
 import it.unive.dagg.Game;
 import it.unive.interfaces.Effect;
+import it.unive.interfaces.EffectStack;
 import java.util.ArrayDeque;
 import java.util.Iterator;
 
 
-public class CardStack implements Iterable<Effect> {
+public class CardStack implements Iterable<Effect>, EffectStack {
 
     private final ArrayDeque<Effect> stack = new ArrayDeque<>();
     

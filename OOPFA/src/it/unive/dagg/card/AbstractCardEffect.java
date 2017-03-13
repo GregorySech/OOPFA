@@ -19,8 +19,7 @@ public abstract class AbstractCardEffect implements Effect {
     protected Player player;
     protected Card card;
 
-    protected AbstractCardEffect(Player player, Card carta) {
-        this.player = player;
+    protected AbstractCardEffect( Card carta) {
         this.card = carta;
     }
     
@@ -35,4 +34,8 @@ public abstract class AbstractCardEffect implements Effect {
        
     }
     
+    @Override
+    public void setCaster(Player p){
+        this.player=p;
+    }
 }

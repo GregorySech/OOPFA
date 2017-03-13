@@ -14,5 +14,6 @@ public interface Game {
     public StackObserver getStackObserver();
     public VictoryObserver getVictoryObserver();
     public Player getRival(Player p);
+    public EffectStack getEffectStack();
     
 }

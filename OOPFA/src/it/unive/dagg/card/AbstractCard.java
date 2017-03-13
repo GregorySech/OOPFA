@@ -42,6 +42,7 @@ public abstract class AbstractCard implements Card {
 
     @Override
     public void cast(Player p) {
+        e.setCaster(p);
         
     }
     

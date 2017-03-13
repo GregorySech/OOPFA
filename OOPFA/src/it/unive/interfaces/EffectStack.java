@@ -7,11 +7,8 @@ package it.unive.interfaces;
 
 /**
  *
- * @author Gregory Sech
+ * @author alessandro
  */
-public interface Effect {
-    // lancio l'effetto
-    void resolve();
-    void setCaster(Player p);
-    Player getCaster();
+public interface EffectStack {
+    
 }
