@@ -33,6 +33,7 @@ public interface Permanent {
      * ritorna la Stringa contenente le info del permanente
      * @return 
      */
+    @Override
     public String toString();
     
             
