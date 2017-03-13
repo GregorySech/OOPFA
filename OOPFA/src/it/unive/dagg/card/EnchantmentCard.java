@@ -5,10 +5,16 @@
  */
 package it.unive.dagg.card;
 
+import it.unive.interfaces.Effect;
+
 /**
  *
  * @author alessandro
  */
 public class EnchantmentCard extends AbstractCard {
+    
+    public EnchantmentCard(String name, Effect e, String desc) {
+        super(name, e, desc);
+    }
     
 }

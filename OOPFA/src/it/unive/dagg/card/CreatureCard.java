@@ -5,9 +5,7 @@
  */
 package it.unive.dagg.card;
 
-import it.unive.interfaces.Card;
 import it.unive.interfaces.Effect;
-import it.unive.interfaces.Player;
 
 
 /**
@@ -16,6 +14,7 @@ import it.unive.interfaces.Player;
  */
 public class CreatureCard extends AbstractCard {
 
-   
-    
+    public CreatureCard(String name, Effect e, String desc) {
+        super(name, e, desc);
+    }   
 }

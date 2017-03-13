@@ -34,4 +34,5 @@ public abstract class AbstractCardEffect implements Effect {
     public void resolve(){
        
     }
+    
 }

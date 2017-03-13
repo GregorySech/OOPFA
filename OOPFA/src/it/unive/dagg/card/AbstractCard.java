@@ -15,6 +15,16 @@ import it.unive.interfaces.Player;
  */
 public abstract class AbstractCard implements Card {
 
+    String name;
+    Effect e;
+    String desc;
+    
+    public AbstractCard(String name, Effect e, String desc) {
+        this.name=name;
+        this.e=e;
+        this.desc=desc;
+    }
+    
     @Override
     public Effect getEffetto(Player proprietario) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
