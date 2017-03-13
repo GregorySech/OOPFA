@@ -12,5 +12,6 @@ package it.unive.interfaces;
 public interface Effect {
     // lancio l'effetto
     void resolve();
-    
+    void setcaster();
+    Player getCaster();
 }
