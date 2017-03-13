@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package it.unive.dagg.card;
+package it.unive.dagg.permanent;
+
+import it.unive.dagg.card.Creature;
 
 /**
  *

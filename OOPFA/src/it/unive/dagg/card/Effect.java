@@ -14,5 +14,5 @@ public interface Effect {
     // ritorna vero se scarto una carta dalla mano e l'aggiungo nello stack
     boolean play();
     // lancio l'effetto
-    void run();
+    void resolve();
 }
