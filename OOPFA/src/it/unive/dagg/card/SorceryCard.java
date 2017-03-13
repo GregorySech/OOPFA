@@ -15,5 +15,9 @@ import it.unive.interfaces.Player;
  */
 public class SorceryCard extends AbstractCard {
 
+    public SorceryCard(String name, Effect e, String desc) {
+        super(name, e, desc);
+    }
+
     
 }
