@@ -3,14 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package it.unive.interfaces;
+package it.unive.dagg.card;
+
+import it.unive.interfaces.Card;
+import it.unive.interfaces.Effect;
+import it.unive.interfaces.Player;
 
 /**
  *
- * @author Gregory Sech
+ * @author alessandro
  */
-public interface Effect {
-    // lancio l'effetto
-    void resolve();
+public class SorceryCard extends AbstractCard {
+
     
 }
