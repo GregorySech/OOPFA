@@ -10,4 +10,5 @@ public interface PermanentListener {
     void onPermanentCreated(Permanent p);
     void onPermanentDestroyed(Permanent p);
     void onPermanentSummoned(Permanent p);
+    void onPermanentRemoved(Permanent p);
 }

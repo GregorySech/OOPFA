@@ -39,4 +39,8 @@ public interface Player {
     void play(int cardHandIndex);
     
     void addInField(Permanent p);
+    
+    void takeFromField(Permanent p);
+    
+    void takeFromField(int index);
 }

@@ -36,5 +36,13 @@ public class PermanentObserver implements it.unive.interfaces.PermanentObserver 
         for(PermanentListener pl : alpl)
             pl.onPermanentDestroyed(p);
     }
+
+    @Override
+    public void removed(Permanent p) {
+        for(PermanentListener pl : alpl)
+            pl.onPermanentRemoved(p);
+    }
+    
+    
     
 }

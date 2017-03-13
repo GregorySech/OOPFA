@@ -10,6 +10,7 @@ package it.unive.dagg.player;
  *
  * @author diletta
  */
+import it.unive.dagg.Game;
 import java.util.Collection;
 import it.unive.interfaces.Card;
 import it.unive.interfaces.Flash;
@@ -151,6 +152,17 @@ public class Player implements it.unive.interfaces.Player{
     @Override
     public void addInField(Permanent p){
         field.add(p);
+        Game.getInstance().getPermanentObserver().summoned(p);
+    }
+    
+    public void takeFromField(Permanent p){
+        field.remove(p);
+        Game.getInstance().getPermanentObserver().removed(p);
+    }
+    
+    public void takeFromField(int index){
+        field.remove(index);
+        Game.getInstance().getPermanentObserver().removed(p);
     }
     
     public Iterator<Flash> handFlashIterator(){

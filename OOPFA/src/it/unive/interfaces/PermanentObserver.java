@@ -12,4 +12,5 @@ public interface PermanentObserver {
     void created(Permanent p);
     void summoned(Permanent p);
     void destroyed(Permanent p);
+    void removed(Permanent p);
 }
