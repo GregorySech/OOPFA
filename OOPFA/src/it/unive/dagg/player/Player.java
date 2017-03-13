@@ -161,8 +161,7 @@ public class Player implements it.unive.interfaces.Player{
     }
     
     public void takeFromField(int index){
-        field.remove(index);
-        Game.getInstance().getPermanentObserver().removed(p);
+        Game.getInstance().getPermanentObserver().removed(field.remove(index));
     }
     
     public Iterator<Flash> handFlashIterator(){
