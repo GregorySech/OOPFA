@@ -6,6 +6,7 @@
 package it.unive.interfaces;
 
 import java.util.Collection;
+import java.util.Iterator;
 
 /**
  * Servizi che Player DEVE poter offrire
@@ -43,4 +44,8 @@ public interface Player {
     void takeFromField(Permanent p);
     
     void takeFromField(int index);
+    
+    Iterator<Flash> handFlashIterator();
+    
+    Iterator<Flash> fieldFlashIterator();
 }
