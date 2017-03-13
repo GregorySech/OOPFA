@@ -137,12 +137,12 @@ public class Player implements it.unive.interfaces.Player{
 
     @Override
     public void play(int cardHandIndex) {
-        hand.remove(cardHandIndex-1).cast();
+        hand.remove(cardHandIndex-1).cast(this);
     }
     
     public void play(Card card){
         hand.remove(card);
-        card.cast();
+        card.cast(this);
     }
     
     /**

@@ -18,5 +18,5 @@ public interface Card {
     String getDescrizione();
     boolean isInstantaneo();
     String getName();
-    void cast();
+    void cast(Player caster);
 }
