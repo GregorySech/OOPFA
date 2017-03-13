@@ -17,4 +17,6 @@ public interface Card {
     String tipo(); //incantesimo, istantanea o creatura
     String getDescrizione();
     boolean isInstantaneo();
+    String getName();
+    void cast();
 }

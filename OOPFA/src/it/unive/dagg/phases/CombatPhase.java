@@ -16,5 +16,13 @@ public class CombatPhase extends AbstractPhase {
     public CombatPhase(Player chief) {
         super(chief);
     }
+
+    @Override
+    void activity() {
+        super.activity(); 
+        System.out.println("CombatPhase di "+getChief().getName());
+    }
+    
+    
     
 }

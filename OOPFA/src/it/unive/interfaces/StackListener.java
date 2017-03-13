@@ -6,8 +6,9 @@
 package it.unive.interfaces;
 
 /**
- * Metodi che Permanent DEVE offrire
- * 
+ *
  */
-public interface Permanent {
+public interface StackListener {
+    void onEffectCasted(Effect e);
+    
 }

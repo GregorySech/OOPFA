@@ -16,5 +16,12 @@ public class UntapPhase extends AbstractPhase{
     public UntapPhase(Player chief) {
         super(chief);
     }
+
+    @Override
+    void activity() {
+        super.activity(); 
+        System.out.println("UntapPhase di "+getChief().getName());
+    }
+    
     
 }

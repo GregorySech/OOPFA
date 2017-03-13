@@ -7,9 +7,12 @@ package it.unive.interfaces;
 
 /**
  *
- * @author Gregory Sech
  */
 public interface Game {
     public PhaseObserver getPhaseObserver();
+    public PermanentObserver getPermanentObserver();
+    public StackObserver getStackObserver();
+    public VictoryObserver getVictoryObserver();
+    public Player getRival(Player p);
     
 }

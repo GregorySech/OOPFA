@@ -6,8 +6,9 @@
 package it.unive.interfaces;
 
 /**
- * Metodi che Permanent DEVE offrire
- * 
+ *
+ * @author gregory
  */
-public interface Permanent {
+public interface VictoryListener {
+    void onVictory(Player p);
 }

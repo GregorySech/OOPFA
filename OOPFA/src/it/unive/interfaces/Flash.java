@@ -3,18 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package it.unive.dagg.player;
-
-import it.unive.interfaces.Permanent;
-import java.util.ArrayList;
+package it.unive.interfaces;
 
 /**
  *
  * @author diletta
  */
-public class Field extends ArrayList<Permanent>{
+public interface Flash {
     
-    public Field(){
-        super();
-    }
 }

@@ -6,8 +6,10 @@
 package it.unive.interfaces;
 
 /**
- * Metodi che Permanent DEVE offrire
- * 
+ *
  */
-public interface Permanent {
+public interface PermanentObserver {
+    void created(Permanent p);
+    void summoned(Permanent p);
+    void destroyed(Permanent p);
 }

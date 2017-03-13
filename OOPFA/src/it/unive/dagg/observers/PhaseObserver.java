@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package it.unive.dagg;
+package it.unive.dagg.observers;
 
 import it.unive.interfaces.Phase;
 import it.unive.interfaces.PhaseListener;
@@ -13,10 +13,10 @@ import java.util.ArrayList;
  * 
  * @author Gregory Sech
  */
-class PhaseObserver implements it.unive.interfaces.PhaseObserver {
+public class PhaseObserver implements it.unive.interfaces.PhaseObserver {
     private final ArrayList<PhaseListener> lpl;
     
-    PhaseObserver(){
+    public PhaseObserver(){
         this.lpl = new ArrayList<>();
         
     }

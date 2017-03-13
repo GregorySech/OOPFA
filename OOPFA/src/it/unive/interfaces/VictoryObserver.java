@@ -6,8 +6,11 @@
 package it.unive.interfaces;
 
 /**
- * Metodi che Permanent DEVE offrire
- * 
+ *
+ * @author gregory
  */
-public interface Permanent {
+public interface VictoryObserver {
+    void addVictoryListener(VictoryListener vl);
+    void removeVictoryListener(VictoryListener vl);
+    void won(Player winner);
 }
