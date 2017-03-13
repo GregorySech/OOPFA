@@ -5,9 +5,7 @@
  */
 package it.unive.dagg.card;
 
-import it.unive.interfaces.Card;
 import it.unive.interfaces.Effect;
-import it.unive.interfaces.Player;
 
 /**
  *
