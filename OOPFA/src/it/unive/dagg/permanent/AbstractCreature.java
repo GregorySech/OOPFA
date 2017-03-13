@@ -6,6 +6,7 @@
 package it.unive.dagg.permanent;
 
 import it.unive.interfaces.Creature;
+import it.unive.interfaces.Player;
 
 /**
  *
@@ -65,7 +66,7 @@ public abstract class AbstractCreature implements Creature {
 
     @Override
     public void getInflictDamage(int dmg) {
-        int damage = player.damageCreature(dmg);
+        /*int damage = player.damageCreature(dmg);
 
         damageLeft = cavia.getDefRemain() - damage;
         System.out.print("\n Danno inflitto "+damage+" alla creatura: "+this.nome());
@@ -73,7 +74,7 @@ public abstract class AbstractCreature implements Creature {
         if (damageLeft <= 0) {
             System.out.print("\n\n\n" + this.nome() + " vita = 0 .... distrutto \n");
             //la creatura va distrutta
-        }
+        }*/
     }
     
     @Override
@@ -81,10 +82,7 @@ public abstract class AbstractCreature implements Creature {
         return damageLeft;
     }
 
-    @Override
-    public void resetDafence() {
-        damageLeft = getDefence();
-    }
+    
 
     @Override
     public boolean isDefender() {

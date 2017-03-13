@@ -75,6 +75,7 @@ public class Game implements it.unive.interfaces.Game {
             vo.addVictoryListener(vl);           
             running = true;
             while(running){
+                System.out.println("[GAME] Ho iniziato una phase");
                 p = pm.getNextPhase();
                 p.phaseRun();
             }
