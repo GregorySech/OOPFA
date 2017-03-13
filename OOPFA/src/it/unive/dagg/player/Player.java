@@ -99,8 +99,8 @@ public class Player implements it.unive.interfaces.Player{
      * scartare
      */
     public void discard(int num) {
-        if(hand.isEmpty()==false){
-            for(; num==0; num--){
+        if(!hand.isEmpty()){
+          for(int i=num; i!=0; i--){
                 hand.remove(choiceCard());
             }
         }
@@ -126,7 +126,7 @@ public class Player implements it.unive.interfaces.Player{
     @Override
     public void printHand(){
         for(Card c: hand){
-            System.out.println((hand.indexOf(c)+1)+c.getName());
+            System.out.println((hand.indexOf(c)+1)+" "+c.getName());
         }
     }
     
