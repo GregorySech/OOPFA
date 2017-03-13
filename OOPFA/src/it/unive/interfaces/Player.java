@@ -34,7 +34,7 @@ public interface Player {
     
     void addLife(int num);
     
-    void sotractLife(int num);
+    void subtractLife(int num);
     
     void play(int cardHandIndex);
 }

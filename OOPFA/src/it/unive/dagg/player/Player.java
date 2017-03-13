@@ -50,7 +50,8 @@ public class Player implements it.unive.interfaces.Player{
         }
     }
     
-    public void sotractLife(int num){
+    @Override
+    public void subtractLife(int num){
         if(num<0){
             throw new UnsupportedOperationException();
         }else{
@@ -117,7 +118,7 @@ public class Player implements it.unive.interfaces.Player{
         return hand.get(index);
     }
     
-    Collection<Card> getHand(){
+    public Collection<Card> getHand(){
         return this.hand;
     }
     
@@ -134,6 +135,11 @@ public class Player implements it.unive.interfaces.Player{
     @Override
     public String getName() {
         return this.name;
+    }
+
+    @Override
+    public void play(int cardHandIndex) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     
