@@ -13,7 +13,6 @@ public interface Card {
 
     // ritorna l'effetto che deve essere inserito nello stackgetEffetto(Player proprietario);
     Effect getEffetto(Player proprietario);
-    String tipo(); //incantesimo, istantanea o creatura
     String getDescrizione();
     String getName();
     void cast(Player caster);
