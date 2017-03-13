@@ -21,7 +21,7 @@ public abstract class AbstractCardEffect implements Effect {
 
     protected AbstractCardEffect(Player player, Card carta) {
         this.player = player;
-        this.card = card;
+        this.card = carta;
     }
     
     
@@ -34,4 +34,5 @@ public abstract class AbstractCardEffect implements Effect {
     public void resolve(){
        
     }
+    
 }
