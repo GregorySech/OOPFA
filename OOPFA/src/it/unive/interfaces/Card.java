@@ -15,7 +15,6 @@ public interface Card {
     Effect getEffetto(Player proprietario);
     String tipo(); //incantesimo, istantanea o creatura
     String getDescrizione();
-    boolean isInstantaneo();
     String getName();
     void cast(Player caster);
 }
