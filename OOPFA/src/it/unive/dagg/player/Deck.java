@@ -15,12 +15,12 @@ import java.util.Collection;
  */
 public class Deck extends ArrayList<Card> {
     
-    public Deck(){
+   /* public Deck(){
         super();
         for(int counter=0; counter<20; counter++){
             this.add(new Card(){});
         }
-    }
+    }*/
     
     public Deck(Collection<Card> deck){
         super(deck);   

@@ -5,10 +5,16 @@
  */
 package it.unive.dagg.player;
 
+import it.unive.interfaces.Permanent;
+import java.util.ArrayList;
+
 /**
  *
  * @author diletta
  */
-public class Field {
+public class Field extends ArrayList<Permanent>{
     
+    public Field(){
+        super();
+    }
 }

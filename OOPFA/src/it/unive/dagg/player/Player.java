@@ -12,6 +12,7 @@ package it.unive.dagg.player;
  */
 import java.util.Collection;
 import it.unive.interfaces.Card;
+import it.unive.interfaces.Permanent;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
@@ -22,8 +23,9 @@ public class Player implements it.unive.interfaces.Player{
     String name;
     int life;
     
-    public Player(Collection<Card> deck){
+    public Player(Collection<Card> deck, String name){
         this.life = 20;
+        this.name = name;
         this.deck = new Deck(deck);
         this.hand = new Hand();
         for(int i=0; i<5;i++){
@@ -63,12 +65,6 @@ public class Player implements it.unive.interfaces.Player{
         return this.life;
     }
     
-    public void setName(){
-       Scanner scan = new Scanner(System.in);
-        System.out.println("Please, insert your player name");
-        name = scan.next();
-        System.out.println("Your name is: "+name);  
-    }
     @Override
     /**
      * metodo per pescare, se il mazzo del giocatore è vuoto il giocatore perde
@@ -118,17 +114,15 @@ public class Player implements it.unive.interfaces.Player{
         return hand.get(index);
     }
     
+    @Override
     public Collection<Card> getHand(){
         return this.hand;
     }
     
+    @Override
     public void printHand(){
-        Card temp = null;
-        for(Iterator<Card> i = hand.iterator(); i.hasNext();){
-            temp = i.next();
-            if(temp!=null){
-                System.out.println(hand.indexOf(temp)+1+temp.getName());
-            }
+        for(Card c: hand){
+            System.out.println((hand.indexOf(c)+1)+c.getName());
         }
     }
     
@@ -139,14 +133,21 @@ public class Player implements it.unive.interfaces.Player{
 
     @Override
     public void play(int cardHandIndex) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        hand.remove(cardHandIndex-1).cast();
     }
     
+    public void play(Card card){
+        hand.remove(card);
+        card.cast();
+    }
     
-    
-    
-    
-    
-    
-    
+    /**
+     * Prende in input un permanente da inserire nel campo personale del giocatore
+     * @param p 
+     */
+    @Override
+    public void addInField(Permanent p){
+        field.add(p);
+    }
+     
 }

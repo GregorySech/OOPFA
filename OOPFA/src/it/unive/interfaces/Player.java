@@ -37,4 +37,6 @@ public interface Player {
     void subtractLife(int num);
     
     void play(int cardHandIndex);
+    
+    void addInField(Permanent p);
 }
