@@ -5,9 +5,7 @@
  */
 package it.unive.dagg.phases;
 
-import it.unive.interfaces.PhaseListener;
 import it.unive.dagg.Game;
-import it.unive.interfaces.Phase;
 import it.unive.interfaces.Player;
 
 /**
@@ -17,35 +15,9 @@ import it.unive.interfaces.Player;
 public abstract class AbstractPhase implements it.unive.interfaces.Phase{
     
     private final Player chief;
-    private PhaseListener pl;
     
     public AbstractPhase(Player chief) {
         this.chief = chief;
-        this.pl = new PhaseListener() {
-            @Override
-            public void onPhaseStarted(Phase p) {
-                System.out.println("[AbstractPhase] Phase iniziata");
-            }
-
-            @Override
-            public void onPhaseEnded(Phase p) {
-                System.out.println("[AbstractPhase] Phase finita");
-            }
-        };
-        Game.getInstance().getPhaseObserver().addPhaseListener(pl);
-    }
-    
-    public AbstractPhase(Player chief, PhaseListener pl){
-        this.chief = chief;
-        this.pl = pl;
-        Game.getInstance().getPhaseObserver().addPhaseListener(pl);
-    }
-
-    @Override
-    public void setPhaseListener(PhaseListener pl){
-        Game.getInstance().getPhaseObserver().removePhaseListener(this.pl);
-        this.pl = pl;
-        Game.getInstance().getPhaseObserver().addPhaseListener(this.pl);
     }
     
     @Override
@@ -78,10 +50,4 @@ public abstract class AbstractPhase implements it.unive.interfaces.Phase{
        phaseEnd();
     }
     
-    public static void main(String[] args){
-        System.out.println("MAIN");
-        Game.getInstance().start();
-        
-        
-    }
 }

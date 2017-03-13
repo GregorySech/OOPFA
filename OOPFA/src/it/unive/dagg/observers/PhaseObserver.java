@@ -23,22 +23,24 @@ public class PhaseObserver implements it.unive.interfaces.PhaseObserver {
 
     @Override
     public void addPhaseListener(PhaseListener pl) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        lpl.add(pl);
     }
 
     @Override
     public void removePhaseListener(PhaseListener pl) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        lpl.remove(pl);
     }
 
     @Override
     public void phaseStarted(Phase p) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        for(PhaseListener pl : lpl)
+            pl.onPhaseStarted(p);
     }
 
     @Override
     public void phaseEnded(Phase p) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        for(PhaseListener pl : lpl)
+            pl.onPhaseEnded(p);
     }
 
     

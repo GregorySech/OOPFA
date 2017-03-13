@@ -11,7 +11,6 @@ package it.unive.interfaces;
  */
 public interface Phase {
     public void phaseRun();
-    public void setPhaseListener(PhaseListener pl);
     public Player getChief();
     
 }

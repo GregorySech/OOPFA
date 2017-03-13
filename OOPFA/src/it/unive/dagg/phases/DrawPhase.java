@@ -21,7 +21,9 @@ public class DrawPhase extends AbstractPhase {
     void activity() {
         System.out.println("DrawPhase di "+getChief().getName());
         getChief().draw();
+        System.out.println("RESIZE DELLA MANO");
         getChief().resizeHand();
+        System.out.println("FINE DRAW");
     }
     
     
