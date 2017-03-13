@@ -5,13 +5,16 @@
  */
 package it.unive.dagg.card;
 
+import it.unive.interfaces.Card;
+import it.unive.interfaces.Effect;
+import it.unive.interfaces.Player;
+
 /**
  *
  * @author alessandro
  */
 
-//rimuove una carta dalla mano e la mette nello stack
-public abstract class AbstractCardEffect extends AbstractEffect {
+public abstract class AbstractCardEffect implements Effect {
     
     protected Player player;
     protected Card card;
@@ -21,14 +24,14 @@ public abstract class AbstractCardEffect extends AbstractEffect {
         this.card = card;
     }
     
-    @Override
-    public boolean play() {
-        //giocatore.metodo che scarta una carta dalla mano
-        return super.play();
-    }
     
     @Override
     public String toString() {
         return card.toString();
+    }
+    
+    @Override
+    public void resolve(){
+       
     }
 }

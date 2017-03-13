@@ -5,7 +5,7 @@
  */
 package it.unive.dagg;
 
-import it.unive.dagg.card.Effect;
+import it.unive.interfaces.Effect;
 import it.unive.interfaces.Card;
 import it.unive.interfaces.PhaseManager;
 import it.unive.interfaces.PermanentObserver;

@@ -1,5 +1,6 @@
 package it.unive.dagg.card;
 
+import it.unive.interfaces.Effect;
 import java.util.ArrayDeque;
 import java.util.Iterator;
 
@@ -27,7 +28,7 @@ public class CardStack implements Iterable<Effect> {
 
             Effect e = stack.pop();
             
-            System.out.println("\n---------------------\nStack: risolto " + e);
+            System.out.println("\n---------------------\nStack: resolved " + e);
             
             e.resolve(); 
         }

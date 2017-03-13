@@ -5,15 +5,25 @@
  */
 package it.unive.dagg.card;
 
+import it.unive.interfaces.Creature;
+import it.unive.interfaces.Card;
+import it.unive.interfaces.Effect;
+import it.unive.interfaces.Permanent;
+import it.unive.interfaces.Player;
+
 /**
  *
  * @author alessandro
  */
 // creature cards
-public abstract class AbstractCreatureCardEffect extends AbstractCardEffect {
+public abstract class AbstractCreatureCardEffect implements Effect {
+    
+    Player owner;
+    Permanent perm;
 
-    protected AbstractCreatureCardEffect( Player p, Card c) {
-        super(p,c);
+    protected AbstractCreatureCardEffect( Player p, Permanent c) {
+        owner=p;
+        perm=c;
     }
     
     // per creare le creature
@@ -21,8 +31,7 @@ public abstract class AbstractCreatureCardEffect extends AbstractCardEffect {
     
     @Override
     public void resolve() {
-        Creature creature = createCreature();
-        CreaturaCampo caviaCreature = new CreaturaCampo(creature);
-       
+        //metodo che aggiunge il permanente al campo...
+        owner.addInField(perm);
     } 
 }

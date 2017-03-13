@@ -5,7 +5,7 @@
  */
 package it.unive.dagg.permanent;
 
-import it.unive.dagg.card.Creature;
+import it.unive.interfaces.Creature;
 
 /**
  *
