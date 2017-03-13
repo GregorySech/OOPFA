@@ -55,7 +55,9 @@ public class Game implements it.unive.interfaces.Game {
     private void run(Player a, Player b){
         if(!running){
             Phase p;
-            if(((int) (Math.random()*10)) % 2 == 0){
+            if(((int) (Math.random()*10)) % 2 == 0){/*
+                Assegno casualmente il giocatore iniziale.
+                */
                 p1 = a;
                 p2 = b;
             }else{
@@ -66,11 +68,11 @@ public class Game implements it.unive.interfaces.Game {
             vl = new VictoryListener() {
                 @Override
                 public void onVictory(Player p) {
-                    System.out.println("Gratz on the victory "+p.getName());
+                    System.out.println("Gratz  "+p.getName());
                     running = false;
                 }
             };
-            vo.addVictoryListener(vl);
+            vo.addVictoryListener(vl);           
             running = true;
             while(running){
                 p = pm.getNextPhase();
@@ -99,7 +101,7 @@ public class Game implements it.unive.interfaces.Game {
             }
             clean = false;
             while(!clean){
-                System.out.println("["+playerOneName+"] what is your rival name?");
+                System.out.println("["+playerOneName+"] what's your rival name?");
                 try {
                     playerTwoName = sc.next("[a-zA-Z]+");
                     clean = true;
@@ -144,6 +146,11 @@ public class Game implements it.unive.interfaces.Game {
                     public String getName() {
                         return "Omeopathy";
                     }
+
+                    @Override
+                    public void cast() {
+                        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                    }
                 });
                 deck2.add(new Card() {
                     @Override
@@ -175,10 +182,15 @@ public class Game implements it.unive.interfaces.Game {
                     public String getName() {
                         return "Omeopathy";
                     }
+
+                    @Override
+                    public void cast() {
+                        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                    }
                 });
             }
             
-            run(new it.unive.dagg.player.Player(deck1), new it.unive.dagg.player.Player(deck2));
+            run(new it.unive.dagg.player.Player(deck1, playerOneName), new it.unive.dagg.player.Player(deck2, playerTwoName));
             
         }
     }
@@ -211,5 +223,10 @@ public class Game implements it.unive.interfaces.Game {
     @Override
     public VictoryObserver getVictoryObserver() {
         return vo;
+    }
+    
+    public static void main(String[] args){
+        System.out.println("MAGIC - FIRST ASSIGNMENT");
+        Game.getInstance().start();
     }
 }
