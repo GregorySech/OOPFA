@@ -218,10 +218,8 @@ public class Player implements it.unive.interfaces.Player{
 
     @Override
     public void play(Flash flash) {
-       ArrayList<Flash> hand = handFlashList();
-       String temp = flash.getName();
-       if(hand.contains(flash)){
-           hand.remove((Card)flash);
+       if(this.hand.contains(flash)){
+           this.hand.remove((Card)flash);
        }
        flash.flash(this);
     }

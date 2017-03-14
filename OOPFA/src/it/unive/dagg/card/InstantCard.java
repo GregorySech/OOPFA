@@ -5,18 +5,23 @@
  */
 package it.unive.dagg.card;
 
-import it.unive.interfaces.Card;
 import it.unive.interfaces.Effect;
 import it.unive.interfaces.Flash;
+import it.unive.interfaces.Player;
 
 /**
  *
  * @author alessandro
  */
-public class IstantCard extends AbstractCard implements Flash{
+public class InstantCard extends AbstractCard implements Flash{
     
-    public IstantCard(String name, Effect e, String desc) {
+    public InstantCard(String name, Effect e, String desc) {
         super(name, e, desc);
+    }
+
+    @Override
+    public void flash(Player caster) {
+        this.cast(caster);
     }
     
     
