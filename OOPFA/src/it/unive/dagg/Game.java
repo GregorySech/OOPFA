@@ -7,11 +7,13 @@ package it.unive.dagg;
 
 import it.unive.interfaces.Effect;
 import it.unive.interfaces.Card;
+import it.unive.interfaces.EffectStack;
 import it.unive.interfaces.PhaseManager;
 import it.unive.interfaces.PermanentObserver;
 import it.unive.interfaces.Phase;
 import it.unive.interfaces.PhaseObserver;
 import it.unive.interfaces.Player;
+import it.unive.interfaces.StackListener;
 import it.unive.interfaces.StackObserver;
 import it.unive.interfaces.VictoryListener;
 import it.unive.interfaces.VictoryObserver;
@@ -115,81 +117,7 @@ public class Game implements it.unive.interfaces.Game {
             ArrayList<Card> deck1, deck2;
             deck1 = new ArrayList<>();
             deck2 = new ArrayList<>();
-            
-            for(int i = 0; i < 20; i++){//due mazzi di Omeopathy por favor!
-                deck1.add(new Card() {
-                    @Override
-                    public Effect getEffetto(Player proprietario) {
-                        return null;
-                    }
-
-                    @Override
-                    public String nome() {
-                        return "Omeopathy";
-                    }
-
-                    @Override
-                    public String tipo() {
-                        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-                    }
-
-                    @Override
-                    public String getDescrizione() {
-                        return "[Instant] Omeopathy does nothing";
-                    }
-
-                    @Override
-                    public boolean isInstantaneo() {
-                        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-                    }
-
-                    @Override
-                    public String getName() {
-                        return "Omeopathy";
-                    }
-
-                    @Override
-                    public void cast() {
-                        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-                    }
-                });
-                deck2.add(new Card() {
-                    @Override
-                    public Effect getEffetto(Player proprietario) {
-                        return null;
-                    }
-
-                    @Override
-                    public String nome() {
-                        return "Omeopathy";
-                    }
-
-                    @Override
-                    public String tipo() {
-                        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-                    }
-
-                    @Override
-                    public String getDescrizione() {
-                        return "[Instant] Omeopathy does nothing";
-                    }
-
-                    @Override
-                    public boolean isInstantaneo() {
-                        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-                    }
-
-                    @Override
-                    public String getName() {
-                        return "Omeopathy";
-                    }
-
-                    @Override
-                    public void cast() {
-                        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-                    }
-                });
-            }
+       
             
             run(new it.unive.dagg.player.Player(deck1, playerOneName), new it.unive.dagg.player.Player(deck2, playerTwoName));
             
@@ -229,5 +157,10 @@ public class Game implements it.unive.interfaces.Game {
     public static void main(String[] args){
         System.out.println("MAGIC - FIRST ASSIGNMENT");
         Game.getInstance().start();
+    }
+
+    @Override
+    public EffectStack getEffectStack() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

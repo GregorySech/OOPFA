@@ -5,6 +5,7 @@
  */
 package it.unive.interfaces;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 
@@ -45,7 +46,7 @@ public interface Player {
     
     void takeFromField(int index);
     
-    Iterator<Flash> handFlashIterator();
+    ArrayList<Flash> handFlashList();
     
-    Iterator<Flash> fieldFlashIterator();
+    ArrayList<Flash> fieldFlashList();
 }

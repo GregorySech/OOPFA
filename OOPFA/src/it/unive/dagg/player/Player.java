@@ -165,24 +165,24 @@ public class Player implements it.unive.interfaces.Player{
     }
     
     @Override
-    public Iterator<Flash> handFlashIterator(){
+    public ArrayList<Flash> handFlashList(){
         ArrayList<Flash> handFlash = new ArrayList();
         for(Card c: this.hand){
             if(c instanceof Flash){
                 handFlash.add((Flash)c);
             }
         }
-        return handFlash.iterator();
+        return handFlash;
     }
     
     @Override
-    public Iterator<Flash> fieldFlashIterator(){
+    public ArrayList<Flash> fieldFlashList(){
         ArrayList <Flash> fieldFlash = new ArrayList();
         for(Permanent p: this.field){
             if(p instanceof Flash){
                 fieldFlash.add((Flash)p);
             }
         }
-        return fieldFlash.iterator();
+        return fieldFlash;
     }
 }
