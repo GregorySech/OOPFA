@@ -185,4 +185,44 @@ public class Player implements it.unive.interfaces.Player{
         }
         return fieldFlash;
     }
+    
+     public ArrayList<Flash> joinFlash(ArrayList<Flash> fieldFlash, ArrayList<Flash> handFlash){
+        ArrayList<Flash> flashes = new ArrayList();
+        for(Flash f: fieldFlash){
+            flashes.add(f);
+        }
+        for(Flash f: handFlash){
+            flashes.add(f);
+        }
+        return flashes;
+    }
+
+    @Override
+    public Flash stackPlay() {
+        int index;
+        ArrayList<Flash> flashes = joinFlash(fieldFlashList(), handFlashList());
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Choose a card to insert in the stack");
+        for(Flash f: flashes){
+            System.out.println((flashes.indexOf(f)+1)+" "+f.getName());
+        }
+        System.out.println("If you don't want to add anything to the stack press 0");
+        index = scan.nextInt();
+        if(index == 0){
+            return null;
+        }else{
+            return flashes.get(index-1);
+        }
+
+    }
+
+    @Override
+    public void play(Flash flash) {
+       ArrayList<Flash> hand = handFlashList();
+       String temp = flash.getName();
+       if(hand.contains(flash)){
+           hand.remove((Card)flash);
+       }
+       flash.flash(this);
+    }
 }

@@ -11,4 +11,6 @@ package it.unive.interfaces;
  */
 public interface Flash {
     void flash(Player caster);
+    
+    String getName();
 }
