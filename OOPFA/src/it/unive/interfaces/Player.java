@@ -40,6 +40,10 @@ public interface Player {
     
     void play(int cardHandIndex);
     
+    void play(Card card);
+    
+    void play(Flash flash);
+    
     void addInField(Permanent p);
     
     void takeFromField(Permanent p);
@@ -49,4 +53,6 @@ public interface Player {
     ArrayList<Flash> handFlashList();
     
     ArrayList<Flash> fieldFlashList();
+    
+    
 }

@@ -10,5 +10,5 @@ package it.unive.interfaces;
  * @author diletta
  */
 public interface Flash {
-    
+    void flash(Player caster);
 }
