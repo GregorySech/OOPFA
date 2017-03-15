@@ -19,6 +19,7 @@ public class CardStack implements EffectStack {
     public void add(Effect e) {
         stack.push(e); 
         Game.getInstance().getStackObserver().casted(e);
+        System.out.println("TEST");
     }
 
     public void remove(Effect e) {

@@ -15,8 +15,8 @@ import it.unive.interfaces.Player;
  */
 public class InstantCard extends AbstractCard implements Flash{
     
-    public InstantCard(String name, Effect e, String desc) {
-        super(name, e, desc);
+    public InstantCard(String name,  String desc) {
+        super(name,  desc);
     }
 
     @Override

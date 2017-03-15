@@ -13,8 +13,8 @@ import it.unive.interfaces.Effect;
  */
 public class EnchantmentCard extends AbstractCard {
     
-    public EnchantmentCard(String name, Effect e, String desc) {
-        super(name, e, desc);
+    public EnchantmentCard(String name,  String desc) {
+        super(name,  desc);
     }
     
 }

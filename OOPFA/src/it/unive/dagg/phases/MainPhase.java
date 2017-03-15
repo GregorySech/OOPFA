@@ -6,6 +6,7 @@
 package it.unive.dagg.phases;
 
 import it.unive.interfaces.Player;
+import it.unive.interfaces.StackListener;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 /**
@@ -23,7 +24,6 @@ public class MainPhase extends AbstractPhase{
         super.activity();
         Scanner sc = new Scanner(System.in);
         int choice = 0;
-        
         System.out.println("Main Phase di "+getChief().getName());
         System.out.println("HAND : ");
         while(choice < 1 || choice > getChief().getHand().size()){
@@ -39,7 +39,8 @@ public class MainPhase extends AbstractPhase{
                 System.out.println("Something went wrong, retry");
             }
         }
-        
+        getChief().play(choice);
+             
         
     }
     

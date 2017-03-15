@@ -5,7 +5,6 @@
  */
 package it.unive.dagg.card;
 
-import it.unive.interfaces.Effect;
 
 /**
  *
@@ -13,8 +12,8 @@ import it.unive.interfaces.Effect;
  */
 public class SorceryCard extends AbstractCard {
 
-    public SorceryCard(String name, Effect e, String desc) {
-        super(name, e, desc);
+    public SorceryCard(String name,  String desc) {
+        super(name,  desc);
     }
 
     

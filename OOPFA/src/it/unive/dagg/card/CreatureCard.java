@@ -14,7 +14,7 @@ import it.unive.interfaces.Effect;
  */
 public class CreatureCard extends AbstractCard {
 
-    public CreatureCard(String name, Effect e, String desc) {
-        super(name, e, desc);
+    public CreatureCard(String name,  String desc) {
+        super(name,  desc);
     }   
 }

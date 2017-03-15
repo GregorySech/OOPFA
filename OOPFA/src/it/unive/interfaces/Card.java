@@ -16,4 +16,5 @@ public interface Card {
     String getDescrizione();
     String getName();
     void cast(Player caster);
+    void setEffect(Effect e);
 }
