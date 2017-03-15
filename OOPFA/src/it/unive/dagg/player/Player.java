@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
+import org.omg.CORBA.OBJECT_NOT_EXIST;
 public class Player implements it.unive.interfaces.Player{
     Deck deck;
     Hand hand;
@@ -137,12 +138,20 @@ public class Player implements it.unive.interfaces.Player{
 
     @Override
     public void play(int cardHandIndex) {
-        hand.remove(cardHandIndex-1).cast(this);
+        if(cardHandIndex>=1 && cardHandIndex<=this.hand.size()){
+            hand.remove(cardHandIndex-1).cast(this);
+        }else{
+            throw new IndexOutOfBoundsException("Choosen index resulted to be not valid");
+        }
     }
     
     public void play(Card card){
-        hand.remove(card);
-        card.cast(this);
+        if(this.hand.contains(card)){
+            hand.remove(card);
+            card.cast(this);
+        }else{
+            throw new NoSuchElementException("Choosen card does not exist");
+        }
     }
     
     /**
