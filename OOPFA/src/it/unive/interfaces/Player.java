@@ -55,4 +55,6 @@ public interface Player {
     ArrayList<Flash> fieldFlashList();
     
     Flash stackPlay();
+    
+    void winner();
 }

@@ -10,11 +10,14 @@ package it.unive.dagg.player;
  *
  * @author diletta
  */
+
 import it.unive.dagg.Game;
+import it.unive.dagg.observers.VictoryObserver;
 import java.util.Collection;
 import it.unive.interfaces.Card;
 import it.unive.interfaces.Flash;
 import it.unive.interfaces.Permanent;
+import it.unive.interfaces.VictoryListener;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -235,4 +238,13 @@ public class Player implements it.unive.interfaces.Player{
        }
        flash.flash(this);
     }
+
+    @Override
+    public void winner() {
+        if(this.deck.isEmpty() || this.life == 0){
+            Game.getInstance().getVictoryObserver().won(Game.getInstance().getRival(this));
+        }
+    }
+    
+    
 }
