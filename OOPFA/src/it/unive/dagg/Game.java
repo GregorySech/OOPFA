@@ -108,6 +108,8 @@ public class Game implements it.unive.interfaces.Game {
                     clean = true;
                 } catch (Exception e) {
                     System.out.println("Letters only.");
+                    sc.next();
+                    clean = false;
                 }
             }
             clean = false;
@@ -118,6 +120,7 @@ public class Game implements it.unive.interfaces.Game {
                     clean = true;
                 } catch (Exception e) {
                     System.out.println("Letters only.");
+                    sc.next();
                 }
             }
             System.out.println("Nice to meet you ["+playerOneName+"] and ["+playerTwoName+"], have a nice game!");

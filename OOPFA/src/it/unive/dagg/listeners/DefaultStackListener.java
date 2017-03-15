@@ -22,7 +22,7 @@ public class DefaultStackListener implements StackListener{
         Player rival = Game.getInstance().getRival(e.getCaster());
                     Flash rFlashPlay = null;
                     Flash mFlashPlay = null;
-                    System.out.println("["+e.getCaster()+"] casted an effect.");
+                    System.out.println("["+e.getCaster().getName()+"] casted an effect.");
                     rFlashPlay = rival.stackPlay();
                     if(rFlashPlay != null)
                         rival.play(rFlashPlay);
