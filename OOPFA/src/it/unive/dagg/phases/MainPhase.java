@@ -23,24 +23,25 @@ public class MainPhase extends AbstractPhase{
     void activity() {
         super.activity();
         Scanner sc = new Scanner(System.in);
-        int choice = 0;
+        int choice = -1;
         System.out.println("Main Phase di "+getChief().getName());
         System.out.println("HAND : ");
-        while(choice < 1 || choice > getChief().getHand().size()){
+        while(choice < 0 || choice > getChief().getHand().size()){
             getChief().printHand();
             try{
-            System.out.println("Card to play?");
+            System.out.println("Card to play? 0 to skip");
             choice = sc.nextInt();
             }catch(InputMismatchException ime){
-                choice = 0;
+                choice = -1;
                 System.out.println("Card's index not found");
             }catch(Exception e){
-                choice = 0;
+                choice = -1;
                 System.out.println("Something went wrong, retry");
             }
         }
-        getChief().play(choice);
-             
+        if(choice != 0){
+            getChief().play(choice);
+        }
         
     }
     
