@@ -19,7 +19,7 @@ public abstract class AbstractCardEffect implements Effect {
     protected Player player;
     protected Card card;
 
-    protected AbstractCardEffect( Card carta) {
+    protected AbstractCardEffect(Card carta) {
         this.card = carta;
     }
     

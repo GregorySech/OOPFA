@@ -1,15 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package it.unive.dagg.phases;
 
 import it.unive.dagg.Game;
 import it.unive.interfaces.Player;
 
 /**
- * Concept of Phase: a Player's activity with a starting and ending points.
+ * Concept of Phase: a Player's activity with a starting point and an ending point.
  * @author Gregory Sech
  */
 public abstract class AbstractPhase implements it.unive.interfaces.Phase{
@@ -20,28 +15,37 @@ public abstract class AbstractPhase implements it.unive.interfaces.Phase{
         this.chief = chief;
     }
     
+    /**
+     * @return "owner" of the phase.
+     */
     @Override
     public Player getChief(){
         return chief;
     }
     
-    void phaseStart(){
+    /**
+     * Phase's starting point.
+     */
+    protected void phaseStart(){
         Game.getInstance().getPhaseObserver().phaseStarted(this);
     }
     
-    void phaseEnd(){
+    /**
+     * Phase's ending point.
+     */
+    protected void phaseEnd(){
         Game.getInstance().getPhaseObserver().phaseEnded(this);
     }
     
     /**
      * @Override this for a specific activity
      */
-    void activity(){
+    protected void activity(){
         
     }
     
     /**
-     * Makes the activity start.
+     * Phase's life cycle.
      */
     @Override
     public final void phaseRun(){

@@ -6,11 +6,17 @@
 package it.unive.interfaces;
 
 /**
- * Servizi che Phase DEVE poter offrire
+ * Phase's services. 
  * @author Gregory Sech
  */
 public interface Phase {
+    /**
+     * This will activate ALL the Phase life cycle.
+     */
     public void phaseRun();
+    /**
+     * @return Phase's owner.
+     */
     public Player getChief();
     
 }

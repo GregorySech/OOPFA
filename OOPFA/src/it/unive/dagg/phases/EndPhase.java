@@ -1,14 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package it.unive.dagg.phases;
 
 import it.unive.interfaces.Player;
 
 /**
- *
+ * Chief end of turn. 
  * @author Gregory Sech
  */
 public class EndPhase extends AbstractPhase{
@@ -18,7 +13,7 @@ public class EndPhase extends AbstractPhase{
     }
 
     @Override
-    void activity() {
+    protected void activity() {
         super.activity(); 
         System.out.println("EndPhase di "+getChief().getName());        
     }

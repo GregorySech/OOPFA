@@ -1,16 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package it.unive.dagg.phases;
 
 import it.unive.interfaces.Player;
-import it.unive.interfaces.StackListener;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 /**
- *
+ * chief's main phase, chief can cast a spell from his hand and start a chain.
  * @author Gregory Sech
  */
 public class MainPhase extends AbstractPhase{
@@ -20,7 +14,7 @@ public class MainPhase extends AbstractPhase{
     }
 
     @Override
-    void activity() {
+    protected void activity() {
         super.activity();
         Scanner sc = new Scanner(System.in);
         int choice = -1;

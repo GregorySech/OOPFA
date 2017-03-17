@@ -1,14 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package it.unive.dagg.phases;
 
 import it.unive.interfaces.Player;
 
 /**
- *
+ * chief's draw phase. Chief's hand must be resized in this phase.
  * @author Gregory Sech
  */
 public class DrawPhase extends AbstractPhase {
@@ -18,7 +13,7 @@ public class DrawPhase extends AbstractPhase {
     }
 
     @Override
-    void activity() {
+    protected void activity() {
         System.out.println("DrawPhase di "+getChief().getName());
         getChief().draw();
         System.out.println("RESIZE DELLA MANO");
