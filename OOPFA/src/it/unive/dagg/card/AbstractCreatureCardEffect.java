@@ -13,23 +13,37 @@ import it.unive.interfaces.Player;
 /**
  *
  * @author alessandro
+ * 
+ * Classe astratta che generalizza al classe creature
  */
-// creature cards
+
 public abstract class AbstractCreatureCardEffect implements Effect {
     
     Player owner;
     Permanent perm;
 
+/**
+ * Crea una carta effetto passando un permanente
+ * @param c 
+ */
     protected AbstractCreatureCardEffect(Permanent c) {
         perm=c;
     }
     
-    // per creare le creature
+
+/*PENSO sI POSSA TOGLIERE*/
+    
+/**
+ * Metodo che serve a creare una creatura
+ * @return Creatura
+ */
     protected abstract Creature createCreature();
     
+/**
+ * Aggiunge un permanente al campo
+ */
     @Override
     public void resolve() {
-        //metodo che aggiunge il permanente al campo...
         owner.addInField(perm);
     } 
 }

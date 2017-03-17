@@ -5,15 +5,18 @@
  */
 package it.unive.dagg.card;
 
-import it.unive.interfaces.Effect;
-
 
 /**
- *
+ * Crea fisicamente la carta creatura (Crea l'oggetto)
  * @author alessandro
  */
 public class CreatureCard extends AbstractCard {
 
+/**
+ * Costruttore della carta
+ * @param name
+ * @param desc 
+ */
     public CreatureCard(String name,  String desc) {
         super(name,  desc);
     }   

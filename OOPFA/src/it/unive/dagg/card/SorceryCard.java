@@ -7,11 +7,15 @@ package it.unive.dagg.card;
 
 
 /**
- *
+ * Crea la carta Incantesimo
  * @author alessandro
  */
 public class SorceryCard extends AbstractCard {
-
+/**
+ * Costruttore della carta incantesimo
+ * @param name
+ * @param desc 
+ */
     public SorceryCard(String name,  String desc) {
         super(name,  desc);
     }

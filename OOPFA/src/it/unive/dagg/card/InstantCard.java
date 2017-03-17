@@ -5,20 +5,27 @@
  */
 package it.unive.dagg.card;
 
-import it.unive.interfaces.Effect;
 import it.unive.interfaces.Flash;
 import it.unive.interfaces.Player;
 
 /**
- *
+ *Crea una carta istantanea
  * @author alessandro
  */
 public class InstantCard extends AbstractCard implements Flash{
     
+/**
+ * Costruttore della carta istantanea
+ * @param name
+ * @param desc 
+ */
     public InstantCard(String name,  String desc) {
         super(name,  desc);
     }
-
+/**
+ * Assegna un caster
+ * @param caster 
+ */
     @Override
     public void flash(Player caster) {
         this.cast(caster);
