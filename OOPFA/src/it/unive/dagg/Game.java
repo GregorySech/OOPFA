@@ -1,13 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package it.unive.dagg;
 
 import it.unive.dagg.card.CardStack;
 import it.unive.dagg.card.cards.OmeopatyCardCreator;
 import it.unive.dagg.listeners.DefaultStackListener;
+import it.unive.dagg.listeners.DefaultVictoryListener;
 import it.unive.interfaces.Card;
 import it.unive.interfaces.EffectStack;
 import it.unive.interfaces.PhaseManager;
@@ -41,6 +37,7 @@ public class Game implements it.unive.interfaces.Game {
     private VictoryListener vl;
     private StackListener sl;
     private EffectStack es;
+    
     private Game(){
         this.po = new it.unive.dagg.observers.PhaseObserver();
         this.permo = new it.unive.dagg.observers.PermanentObserver();
@@ -52,46 +49,49 @@ public class Game implements it.unive.interfaces.Game {
         this.running = false;
         
     }
-    
+    /**
+     * @return singoletto di Game.
+     */
     public static Game getInstance(){
         if(me == null)
             me = new Game();
         return me;
     }
     
+    /**
+     * Dati due giocatori da il via ad un nuovo gioco.
+     * @param a Uno dei due giocatori generico.
+     * @param b Uno dei due giocatori generico.
+     */
     private void run(Player a, Player b){
+        
         if(!running){
             Phase p;
-            if(((int) (Math.random()*10)) % 2 == 0){/*
-                Assegno casualmente il giocatore iniziale.
-                */
+            if(((int) (Math.random()*10)) % 2 == 0){ //random starting order.
                 p1 = a;
                 p2 = b;
             }else{
                 p2 = a;
                 p1 = b;
             }
-            this.pm = new it.unive.dagg.phases.PhaseManager(p1);
+            pm = new it.unive.dagg.phases.PhaseManager(p1);
             sl = new DefaultStackListener();
             so.addStackListener(sl);
-            vl = new VictoryListener() {
-                @Override
-                public void onVictory(Player p) {
-                    System.out.println("Gratz  "+p.getName());
-                    running = false;
-                }
-            };
+            vl = new DefaultVictoryListener();
             vo.addVictoryListener(vl);  
             
             running = true;
             while(running){
-                System.out.println("[GAME] Ho iniziato una phase");
                 p = pm.getNextPhase();
                 p.phaseRun();
             }
         }
     }
     
+    /**
+     * Inizia il ciclo di vita del gioco.
+     */
+    @Override
     public void start() {
         /*
             Greeter del gioco, "form" per la creazione dei giocatori
@@ -102,7 +102,7 @@ public class Game implements it.unive.interfaces.Game {
             boolean clean = false;
             System.out.println("Welcome Players in Magic Omeopathy Edition!");
             while(!clean){
-                System.out.println("What's your name?");
+                System.out.println("Player 1 what's your name?");
                 try {
                     playerOneName = sc.next("[a-zA-Z]+");
                     clean = true;
@@ -114,7 +114,7 @@ public class Game implements it.unive.interfaces.Game {
             }
             clean = false;
             while(!clean){
-                System.out.println("["+playerOneName+"] what's your rival name?");
+                System.out.println("Player 2 what's your name?");
                 try {
                     playerTwoName = sc.next("[a-zA-Z]+");
                     clean = true;
@@ -138,11 +138,19 @@ public class Game implements it.unive.interfaces.Game {
         }
     }
 
+    /**
+     * 
+     * @return osservatore delle fasi di Game.
+     */
     @Override
     public PhaseObserver getPhaseObserver() {
         return po;
     }
 
+    /**
+     * 
+     * @return osservatore dei permanenti di Game.
+     */
     @Override
     public PermanentObserver getPermanentObserver() {
         return permo;
@@ -168,13 +176,43 @@ public class Game implements it.unive.interfaces.Game {
         return vo;
     }
     
+    @Override
+    public EffectStack getEffectStack() {
+        return es;
+    }
+
+    @Override
+    public void stop() {
+        this.running = false;
+    }
+
+    @Override
+    public StackListener getGameStackListener() {
+        return this.sl;
+    }
+
+    @Override
+    public VictoryListener getGameVictoryListener() {
+        return this.vl;
+    }
+
+    @Override
+    public void changeStackListener(StackListener sl) {
+        so.removeStackListener(this.sl);
+        so.addStackListener(sl);
+        this.sl = sl;
+    }
+
+    @Override
+    public void changeVictoryListener(VictoryListener vl) {
+        vo.removeVictoryListener(this.vl);
+        vo.addVictoryListener(vl);
+        this.vl = vl;
+    }
+    
     public static void main(String[] args){
         System.out.println("MAGIC - FIRST ASSIGNMENT");
         Game.getInstance().start();
     }
 
-    @Override
-    public EffectStack getEffectStack() {
-        return es;
-    }
 }

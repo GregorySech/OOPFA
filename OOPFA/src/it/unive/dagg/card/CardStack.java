@@ -33,4 +33,10 @@ public class CardStack implements EffectStack {
             e.resolve(); 
         }
     }
+
+    @Override
+    public void printStack() {
+        for(Effect e : stack)
+            System.out.println(e.toString());
+    }
 }

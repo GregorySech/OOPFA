@@ -20,8 +20,7 @@ public abstract class AbstractCreatureCardEffect implements Effect {
     Player owner;
     Permanent perm;
 
-    protected AbstractCreatureCardEffect( Player p, Permanent c) {
-        owner=p;
+    protected AbstractCreatureCardEffect(Permanent c) {
         perm=c;
     }
     

@@ -21,12 +21,16 @@ public abstract class AbstractCardEffect implements Effect {
 
     protected AbstractCardEffect(Card carta) {
         this.card = carta;
+        player = null;
     }
     
     
     @Override
     public String toString() {
-        return card.toString();
+        if(player == null)
+            return card.toString();
+        else
+            return "["+player.getName()+"] casted "+card.toString();
     }
     
     @Override

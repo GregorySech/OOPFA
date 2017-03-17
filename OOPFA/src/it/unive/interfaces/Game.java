@@ -9,10 +9,18 @@ package it.unive.interfaces;
  *
  */
 public interface Game {
-    public PhaseObserver getPhaseObserver();
-    public PermanentObserver getPermanentObserver();
-    public StackObserver getStackObserver();
-    public VictoryObserver getVictoryObserver();
-    public Player getRival(Player p);
-    public EffectStack getEffectStack();
+    PhaseObserver getPhaseObserver();
+    PermanentObserver getPermanentObserver();
+    StackObserver getStackObserver();
+    VictoryObserver getVictoryObserver();
+    EffectStack getEffectStack();
+    StackListener getGameStackListener();
+    VictoryListener getGameVictoryListener();
+    
+    void changeStackListener(StackListener sl);
+    void changeVictoryListener(VictoryListener vl);
+    
+    Player getRival(Player p);
+    void stop();
+    void start();
 }

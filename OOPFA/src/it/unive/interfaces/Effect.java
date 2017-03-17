@@ -14,4 +14,5 @@ public interface Effect {
     void resolve();
     void setCaster(Player p);
     Player getCaster();
+    String toString();
 }

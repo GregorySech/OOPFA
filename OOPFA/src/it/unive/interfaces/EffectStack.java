@@ -10,7 +10,8 @@ package it.unive.interfaces;
  * @author alessandro
  */
 public interface EffectStack extends Iterable<Effect> {
-    public void add(Effect e);
-    public void remove(Effect e);
-    public void resolve();
+    void add(Effect e);
+    void remove(Effect e);
+    void resolve();
+    void printStack();
 }
