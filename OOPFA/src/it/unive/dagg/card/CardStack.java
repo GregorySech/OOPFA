@@ -27,6 +27,7 @@ public class CardStack implements EffectStack {
  * Aggiunge un'effetto allo stack
  * @param e 
  */
+    @Override
     public void add(Effect e) {
         stack.push(e); 
         Game.getInstance().getStackObserver().casted(e);
@@ -36,6 +37,7 @@ public class CardStack implements EffectStack {
  * Toglie un'effetto dallo stack
  * @param e 
  */
+    @Override
     public void remove(Effect e) {
         stack.remove(e);
     }
@@ -43,6 +45,7 @@ public class CardStack implements EffectStack {
 /**
  * Attiva un'effetto dallo stack se lo stack non è vuoto
  */
+    @Override
     public void resolve() {
         while(!stack.isEmpty()) { 
             Effect e = stack.pop();

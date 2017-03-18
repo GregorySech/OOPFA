@@ -10,9 +10,26 @@ package it.unive.interfaces;
  * @author Gregory Sech
  */
 public interface Effect {
-    // lancio l'effetto
+    /**
+    * attiva l'effetto della carta
+    */
     void resolve();
+    /**
+    * Definisce il proprietario della carta, ovvero il player che la carica nello stack
+    * @param p 
+    */ 
     void setCaster(Player p);
+    /**
+    * 
+    * Ritorna chi ha caricato l'effetto della carta nello stack
+    * @return player -> giocatore che carica l'effetto nello stack
+    */
     Player getCaster();
+    /**
+     * Se non ha proprietario ritorna i dettagli della carta, altrimenti ritorna il 
+    * proprietario e i dettaagli
+    * @return 
+    */
+    @Override
     String toString();
 }

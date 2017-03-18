@@ -11,10 +11,30 @@ package it.unive.interfaces;
  */
 public interface Card {
 
-    // ritorna l'effetto che deve essere inserito nello stackgetEffetto(Player proprietario);
+    /**
+     * Ritorna l'effetto assegnato ad una carta
+     * @param proprietario
+     * @return e -> effetto della carta
+     */
     Effect getEffetto(Player proprietario);
+    /**
+     * Ritorna la descrizione della carta
+     * @return desc -> descrizone della carta
+     */
     String getDescrizione();
+    /**
+    * Ritorna il nome della carta
+    * @return nome 
+    */
     String getName();
+      /**
+     * Aggiunge un effetto allo stack
+     * @param p 
+     */
     void cast(Player caster);
+    /**
+     * Assegna un effetto a una carta
+     * @param e 
+     */
     void setEffect(Effect e);
 }
