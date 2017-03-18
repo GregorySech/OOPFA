@@ -30,15 +30,7 @@ public abstract class AbstractCreatureCardEffect implements Effect {
         perm=c;
     }
     
-
-/*PENSO sI POSSA TOGLIERE*/
-    
-/**
- * Metodo che serve a creare una creatura
- * @return Creatura
- */
-    protected abstract Creature createCreature();
-    
+   
 /**
  * Aggiunge un permanente al campo
  */

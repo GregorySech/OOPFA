@@ -5,7 +5,6 @@
  */
 package it.unive.dagg.card;
 
-import it.unive.interfaces.Effect;
 
 /**
  *
