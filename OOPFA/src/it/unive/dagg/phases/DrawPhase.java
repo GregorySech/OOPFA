@@ -1,6 +1,8 @@
 package it.unive.dagg.phases;
 
+import it.unive.dagg.Game;
 import it.unive.interfaces.Player;
+import java.util.NoSuchElementException;
 
 /**
  * chief's draw phase. Chief's hand must be resized in this phase.
@@ -15,8 +17,15 @@ public class DrawPhase extends AbstractPhase {
     @Override
     protected void activity() {
         System.out.println("DrawPhase di "+getChief().getName());
-        getChief().draw();
-        getChief().resizeHand();
+        try{
+            getChief().draw();
+        }
+        catch(NoSuchElementException e){
+            System.out.println("["+getChief().getName()+"] You can't draw a Card! (Empty Deck)");
+            Player winner = Game.getInstance().getRival(getChief());
+            Game.getInstance().getGameVictoryListener().onVictory(winner);
+        }
+            getChief().resizeHand();
     }
     
     

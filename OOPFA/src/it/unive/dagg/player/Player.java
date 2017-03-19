@@ -115,9 +115,11 @@ public class Player implements it.unive.interfaces.Player{
         Scanner scan = new Scanner(System.in);
         System.out.println("You have to choose a card to discard. These are your cards:");
         printHand();
-        System.out.println("Which one you want to discard?");
-        index = scan.nextInt();
-        return hand.get(index);
+        System.out.println("Which one you want to discard? (insert number betwen 1 and "+hand.size()+")");
+        do{
+            index = scan.nextInt();
+        }while(index < 1 || index > hand.size());
+        return hand.get(index-1);
     }
     
     @Override
