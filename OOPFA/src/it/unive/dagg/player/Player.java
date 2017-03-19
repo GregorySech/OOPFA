@@ -62,6 +62,8 @@ public class Player implements it.unive.interfaces.Player{
             throw new UnsupportedOperationException();
         }else{
             this.life-=num;
+            if(this.life <= 0)
+                Game.getInstance().getVictoryObserver().won(Game.getInstance().getRival(this));
         }
     }
     

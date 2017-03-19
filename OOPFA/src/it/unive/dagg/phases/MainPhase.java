@@ -28,9 +28,11 @@ public class MainPhase extends AbstractPhase{
             }catch(InputMismatchException ime){
                 choice = -1;
                 System.out.println("Card's index not found");
+                sc.next();
             }catch(Exception e){
                 choice = -1;
                 System.out.println("Something went wrong, retry");
+                sc.next();
             }
         }
         if(choice != 0){

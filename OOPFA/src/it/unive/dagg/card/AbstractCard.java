@@ -76,5 +76,10 @@ public abstract class AbstractCard implements Card {
         Game.getInstance().getEffectStack().add(e);
         
     }
+
+    @Override
+    public String toString() {
+        return getName() + " - " + getDescrizione();
+    }
     
 }

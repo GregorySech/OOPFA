@@ -5,6 +5,7 @@
  */
 package it.unive.dagg.card.cards;
 
+import it.unive.dagg.Game;
 import it.unive.dagg.card.AbstractCardEffect;
 import it.unive.dagg.card.InstantCard;
 import it.unive.interfaces.Card;
@@ -18,7 +19,12 @@ public class OmeopatyCardCreator{
 
     public static Card getCard(){
         Card omeopathy = new InstantCard("Omeopathy",  "Does nothing");
-        omeopathy.setEffect(new AbstractCardEffect(omeopathy) {});
+        omeopathy.setEffect(new AbstractCardEffect(omeopathy) {
+            @Override
+            public void resolve() {
+            }
+            
+        });
         return omeopathy;
     }
     
