@@ -25,6 +25,15 @@ public class Player implements it.unive.interfaces.Player{
     Field field;
     String name;
     int life;
+    int maxHand = 7;
+    
+    public int getMaxHand(){
+        return maxHand;
+    }
+    
+    public void setMaxHand(int max){
+        maxHand = max;
+    }
     
     public Player(Collection<Card> deck, String name){
         this.life = 20;
@@ -90,7 +99,7 @@ public class Player implements it.unive.interfaces.Player{
      * perchè non si sa quante carte bisognerà scartare prima di arrivare a 7
      */
     public void resizeHand() {
-        while(hand.size()>7){
+        while(hand.size()>maxHand){
             discard(1);
         }
     }

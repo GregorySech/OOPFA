@@ -56,5 +56,9 @@ public interface Player {
     
     Flash stackPlay();
     
+    int getMaxHand();
+    
+    void setMaxHand(int max);
+    
     void winner();
 }
