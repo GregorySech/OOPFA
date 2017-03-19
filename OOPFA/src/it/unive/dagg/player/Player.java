@@ -219,7 +219,7 @@ public class Player implements it.unive.interfaces.Player{
             }
             System.out.println("If you don't want to add anything to the stack press 0");
             index = scan.nextInt();
-        }while(index<=0 || index>=flashes.size());
+        }while(index<0 || index>flashes.size());
         if(index == 0){
             return null;
         }else{
