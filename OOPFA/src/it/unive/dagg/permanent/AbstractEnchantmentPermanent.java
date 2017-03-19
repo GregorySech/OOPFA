@@ -11,9 +11,9 @@ import it.unive.interfaces.Player;
  *
  * @author giacomo
  */
-public abstract class EnchantmentPermanent extends Permanent{
+public abstract class AbstractEnchantmentPermanent extends AbstractPermanent{
     
-    public EnchantmentPermanent(String name, Player p) {
+    public AbstractEnchantmentPermanent(String name, Player p) {
         super(name, p);
     }
     /**
@@ -25,5 +25,5 @@ public abstract class EnchantmentPermanent extends Permanent{
      * afflict è l'effetto che usa il permanente -> da implementare quando si chiama con classe anonima!
      * @param permanent 
      */
-    public void afflict(Permanent permanent){}
+    public void afflict(AbstractPermanent permanent){}
 }
