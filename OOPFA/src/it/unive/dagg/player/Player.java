@@ -12,17 +12,13 @@ package it.unive.dagg.player;
  */
 
 import it.unive.dagg.Game;
-import it.unive.dagg.observers.VictoryObserver;
 import java.util.Collection;
 import it.unive.interfaces.Card;
 import it.unive.interfaces.Flash;
 import it.unive.interfaces.Permanent;
-import it.unive.interfaces.VictoryListener;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
-import org.omg.CORBA.OBJECT_NOT_EXIST;
 public class Player implements it.unive.interfaces.Player{
     Deck deck;
     Hand hand;

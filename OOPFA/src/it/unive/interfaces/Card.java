@@ -7,7 +7,6 @@ package it.unive.interfaces;
 
 /**
  * Metodi che Card DEVE offrire
- * @author Gregory Sech
  */
 public interface Card {
 
