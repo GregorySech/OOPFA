@@ -31,7 +31,6 @@ public class CardStack implements EffectStack {
     public void add(Effect e) {
         stack.push(e); 
         Game.getInstance().getStackObserver().casted(e);
-        System.out.println("TEST");
     }
 /**
  * Toglie un'effetto dallo stack
@@ -49,7 +48,7 @@ public class CardStack implements EffectStack {
     public void resolve() {
         while(!stack.isEmpty()) { 
             Effect e = stack.pop();
-            System.out.println("\n---------------------\nStack: resolved " + e);
+            System.out.println("\n---------------------\nStack: resolved " + e.toString());
             e.resolve(); 
         }
     }

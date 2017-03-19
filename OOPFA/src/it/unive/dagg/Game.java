@@ -209,10 +209,14 @@ public class Game implements it.unive.interfaces.Game {
         vo.addVictoryListener(vl);
         this.vl = vl;
     }
+
+    @Override
+    public PhaseManager getPhaseManager() {
+        return pm;
+    }
     
     public static void main(String[] args){
         System.out.println("MAGIC - FIRST ASSIGNMENT");
         Game.getInstance().start();
     }
-
 }

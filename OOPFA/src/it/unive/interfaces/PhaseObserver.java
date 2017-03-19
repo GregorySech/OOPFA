@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package it.unive.interfaces;
 
 /**
@@ -12,6 +7,14 @@ package it.unive.interfaces;
 public interface PhaseObserver {
     public void addPhaseListener(PhaseListener pl);
     public void removePhaseListener(PhaseListener pl);
+    /**
+     * avvisa l'oggetto dell'inizio di una fase
+     * @param p fase iniziata
+     */
     public void phaseStarted(Phase p);
+    /**
+     * avvisa l'oggetto della fine di una fase
+     * @param p fase finita
+     */
     public void phaseEnded(Phase p);
 }
