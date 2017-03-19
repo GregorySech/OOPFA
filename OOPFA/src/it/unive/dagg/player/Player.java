@@ -211,21 +211,19 @@ public class Player implements it.unive.interfaces.Player{
     public Flash stackPlay() {
         int index;
         ArrayList<Flash> flashes = joinFlash(fieldFlashList(), handFlashList());
-        Scanner scan = new Scanner(System.in);
-        System.out.println("["+this.getName()+ "]Choose a card to insert in the stack");
-        for(Flash f: flashes){
-            System.out.println((flashes.indexOf(f)+1)+" "+f.getName());
-        }
-        System.out.println("If you don't want to add anything to the stack press 0");
-        index = scan.nextInt();
-        if(index>=0 && index<= flashes.size()){
-            if(index == 0){
-                return null;
-            }else{
-                return flashes.get(index-1);
+        do{
+            Scanner scan = new Scanner(System.in);
+            System.out.println("["+this.getName()+ "]Choose a card to insert in the stack");
+            for(Flash f: flashes){
+                System.out.println((flashes.indexOf(f)+1)+" "+f.getName());
             }
+            System.out.println("If you don't want to add anything to the stack press 0");
+            index = scan.nextInt();
+        }while(index<=0 || index>=flashes.size());
+        if(index == 0){
+            return null;
         }else{
-            throw new IndexOutOfBoundsException("Choosen index is not valid");
+            return flashes.get(index-1);
         }
     }
 
