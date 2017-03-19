@@ -38,7 +38,7 @@ public abstract class AbstractPhase implements it.unive.interfaces.Phase{
     }
     
     /**
-     * @Override this for a specific activity
+     * Override this for a specific activity
      */
     protected void activity(){
         

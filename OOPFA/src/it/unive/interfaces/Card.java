@@ -13,12 +13,12 @@ public interface Card {
     /**
      * Ritorna l'effetto assegnato ad una carta
      * @param proprietario
-     * @return e -> effetto della carta
+     * @return effetto della carta
      */
     Effect getEffetto(Player proprietario);
     /**
      * Ritorna la descrizione della carta
-     * @return desc -> descrizone della carta
+     * @return descrizone della carta
      */
     String getDescrizione();
     /**
@@ -28,7 +28,7 @@ public interface Card {
     String getName();
       /**
      * Aggiunge un effetto allo stack
-     * @param p 
+     * @param caster  
      */
     void cast(Player caster);
     /**

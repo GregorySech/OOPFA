@@ -60,7 +60,7 @@ public abstract class AbstractCardEffect implements Effect {
 /**
  * 
  * Ritorna chi ha caricato l'effetto della carta nello stack
- * @return player -> giocatore che carica l'effetto nello stack
+ * @return giocatore che carica l'effetto nello stack
  */
     @Override
     public Player getCaster() {

@@ -16,14 +16,4 @@ public abstract class AbstractEnchantmentPermanent extends AbstractPermanent{
     public AbstractEnchantmentPermanent(String name, Player p) {
         super(name, p);
     }
-    /**
-     * afflict è l'effetto che usa il permanente -> da implementare quando si chiama con classe anonima!
-     * @param player 
-     */
-    public void afflict(Player player){}
-    /**
-     * afflict è l'effetto che usa il permanente -> da implementare quando si chiama con classe anonima!
-     * @param permanent 
-     */
-    public void afflict(AbstractPermanent permanent){}
 }

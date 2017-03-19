@@ -30,7 +30,6 @@ public interface StackObserver {
     /**
      * 
      * @param sl StackListener da aggiungere 
-     * @return null se non è riuscito a rimuovere sl, sl altrimenti
      */
     void removeStackListener(StackListener sl);
 }   

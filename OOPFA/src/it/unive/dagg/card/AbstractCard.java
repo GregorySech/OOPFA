@@ -34,7 +34,7 @@ public abstract class AbstractCard implements Card {
     /**
      * Ritorna l'effetto assegnato ad una carta
      * @param proprietario
-     * @return e -> effetto della carta
+     * @return effetto della carta
      */
     @Override
     public Effect getEffetto(Player proprietario) {
@@ -51,7 +51,7 @@ public abstract class AbstractCard implements Card {
     
     /**
      * Ritorna la descrizione della carta
-     * @return desc -> descrizone della carta
+     * @return descrizone della carta
      */
     @Override
     public String getDescrizione() {
