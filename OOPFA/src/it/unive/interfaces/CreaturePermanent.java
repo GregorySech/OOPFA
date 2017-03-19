@@ -1,9 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package it.unive.interfaces;
+    package it.unive.interfaces;
 
 /**
  *
@@ -26,6 +21,11 @@ public interface CreaturePermanent extends Permanent{
        */
       public boolean isTapped();
       /**
+       * ritorna la vita corrente della creatura
+       * @return 
+       */
+      public int getLife();
+       /**
        * ritorna true se la creatura è in difesa
        * @return 
        */
@@ -47,16 +47,16 @@ public interface CreaturePermanent extends Permanent{
        * difendi il Player da attacker
        * @param attacker 
        */
-      public void defenseFrom(CreaturePermanent attacker);
+      public void defenseFrom(CreaturePermanent attacker) throws Exception;
       /**
        * attacca il Player enemy
        * @param enemy 
        */
-      public void attack(Player enemy);
+      public void attack(Player enemy) throws Exception;
       /**
-       * ripristina i punti vita
+       * ripristina il dannno della creatura
        */
-      public void restoreHp();
+      public void restoreDamage();
       /**
        * ritorna la Stringa contenente le info della creatura
        * @return 

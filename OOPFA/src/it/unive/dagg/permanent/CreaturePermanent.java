@@ -7,21 +7,16 @@ package it.unive.dagg.permanent;
 
 import it.unive.interfaces.Player;
 
-/**
- *
- * @author giacomo
- */
-public abstract class CreaturePermanent extends Permanent{
-    private final int initialHp;
-    private int hp;
-    private int attack;
+public abstract class CreaturePermanent extends Permanent implements it.unive.interfaces.CreaturePermanent{
+    private final int hp;
+    private final int attack;
     private boolean tapped = false; 
     private boolean defender = false;
+    private int damage;
     
-    public CreaturePermanent(String name, int lifePoints, int attack, Player p){
+    public CreaturePermanent(String name, int hp, int attack, Player p){
         super(name, p);
-        initialHp = lifePoints;
-        hp = initialHp;
+        this.hp = hp;
         this.attack = attack;     
     }
     public int getHp(){
@@ -34,8 +29,10 @@ public abstract class CreaturePermanent extends Permanent{
 
     public boolean isTapped(){
         return tapped;
+    }  
+    public int getLife(){
+        return hp-damage;
     }
-
     public boolean isDefender(){
         return defender;
     }
@@ -48,50 +45,35 @@ public abstract class CreaturePermanent extends Permanent{
         tapped = true;
     }
 
+    @Override
     public void untap(){
         tapped = false;
     }
-
+    @Override
     public void defenseFrom(CreaturePermanent attacker) throws Exception{
         if(!defender)
              throw new Exception("["+name+"] I can't defend you!");
-        hp -= attacker.getAttack();
+        damage += attacker.getAttack();
         attack(attacker);
     }
 
+    @Override
     public void attack(Player enemy) throws Exception{ /*una creatura può attaccare solo il giocatore avversario.*/
         if(!tapped)
             throw new Exception("["+name+"] I can't attack!");
-        enemy.subtractLife(hp);
+        enemy.subtractLife(attack);
     }
     private void attack(CreaturePermanent enemyCreature) {
         
         /*PRIVATE perchè lo chiamo internamente con il metodo defenseFrom*/
-        hp -= enemyCreature.getAttack();
-        if(hp <= 0)
+        damage += enemyCreature.getAttack();
+        if(damage >= hp)
            destroy();
     }
-    public void restoreHp(){
-        hp = initialHp;
+    public void restoreDamage(){
+        damage = 0;
     }
     
-    public void subHp(int hp){
-        this.hp -= hp;
-        if(hp <= 0)
-            destroy();
-    }
-    public void addHp(int hp){
-        this.hp += hp;
-    }
-    public void addAttack(int ap){
-        this.attack += attack;
-    }
-    
-    public void subAttack(int ap){
-        attack -= ap;
-        if(attack < 0)
-            attack = 0;
-    }
     @Override
     public String toString(){
        return super.toString()+" HP: "+hp+" ATTACK: "+attack+" TAPPED: "+tapped;
